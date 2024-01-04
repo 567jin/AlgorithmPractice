@@ -10,8 +10,7 @@ public class _704_DichotomousSearch {
 
 
 class Solution {
-
-
+    
     public int search(int[] nums, int target) {
 
         int left = 0, right = nums.length - 1; // 左闭右闭区间
