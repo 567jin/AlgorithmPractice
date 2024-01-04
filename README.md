@@ -17,6 +17,7 @@
 
 单调队列的应用，关键在于怎么维护单调队列，两点值得注意：移出队列的时机(队列中的值不在窗口内，后来的值比队列最大值要大)，队列中保存数组下标。
 [MaxSlidingWindow](src/_239_MaxSlidingWindow.java)
+
 ---
 
 [704.二分查找](https://leetcode.cn/problems/binary-search/description/)
