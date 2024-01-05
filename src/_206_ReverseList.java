@@ -9,7 +9,8 @@ public class _206_ReverseList {
         ListNode head = ListNode.genList(new int[]{1, 2, 3, 4, 5});
         ListNode.printList(head);
 
-        ListNode node = new _206_ReverseList().reverseList(head);
+//        ListNode node = new _206_ReverseList().reverseList(head);
+        ListNode node = new _206_ReverseList().reverseList2(head, null);
         ListNode.printList(node);
 
     }
@@ -25,4 +26,15 @@ public class _206_ReverseList {
         }
         return pre;
     }
+
+    public ListNode reverseList2(ListNode head, ListNode pre) {
+        if (head == null) {
+            return pre;
+        }
+        ListNode cur = head;
+        ListNode temp = cur.next;
+        cur.next = pre;
+        return reverseList2(temp, cur);
+    }
+
 }
