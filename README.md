@@ -6,7 +6,7 @@
 
 文件命名规则：\_(题目编号)\_(题目名称)
 
-## 日行一善，每日一题
+## 每日一题 😡😡😡
 
 [1.两数之和](https://leetcode.cn/problems/two-sum/)
 
@@ -28,3 +28,9 @@
 [DichotomousSearch](src/_704_DichotomousSearch.java)
 
 ---
+
+[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
+
+三个参数，一个记录cur，一个记录cur.next，一个记录pre。
+[ReverseList](src/_206_ReverseList.java)
+
