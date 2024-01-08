@@ -34,3 +34,8 @@
 三个参数，一个记录cur，一个记录cur.next，一个记录pre。
 [ReverseList](src/_206_ReverseList.java)
 
+---
+
+[39.组合总和](https://leetcode.cn/problems/combination-sum/description/)
+
+回溯的一个大类题型，组合。组合需要一个Index来记录索引位置防止重复元素。[CombinationSum](src/_39_CombinationSum.java)
