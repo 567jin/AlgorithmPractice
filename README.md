@@ -39,3 +39,12 @@
 [39.组合总和](https://leetcode.cn/problems/combination-sum/description/)
 
 回溯的一个大类题型，组合。组合需要一个Index来记录索引位置防止重复元素。[CombinationSum](src/_39_CombinationSum.java)
+
+
+---
+[46.全排列](https://leetcode.cn/problems/permutations/description/)
+
+回溯的另一个大类题型，排列。排列是跟元素顺序有关的，也即一个元素用过之后就不能再用了，元素之间交换位置就是两个不同的组合。
+这个全排列关键在于使用一个visited数组来记录曾访问过哪些元素，访问过的元素不可以在访问了。[Permute](src/_46_Permute.java)
+
+
