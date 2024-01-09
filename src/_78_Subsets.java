@@ -15,13 +15,39 @@ public class _78_Subsets {
         System.out.println("---------------------------------------------");
         List<List<Integer>> subsets2 = new _78_Subsets().subsets2(nums);
         System.out.println(subsets2);
+        System.out.println("---------------------------------------------");
+        List<List<Integer>> subsets3 = new _78_Subsets().subsets3(nums);
+        System.out.println(subsets3);
+
+    }
+
+    private List<List<Integer>> subsets3(int[] nums) {
+        res = new ArrayList<>();
+        path = new LinkedList<>();
+        subsetsHelper(nums, 0);
+        return res;
+    }
+
+    private void subsetsHelper(int[] nums, int startIndex) {
+        res.add(new ArrayList<>(path));//「遍历这个树的时候，把所有节点都记录下来，就是要求的子集集合」。
+        if (startIndex >= nums.length) { //终止条件可不加
+            return;
+        }
+        for (int i = startIndex; i < nums.length; i++) {
+            path.add(nums[i]);
+            subsetsHelper(nums, i + 1);
+            path.removeLast();
+        }
     }
 
     /**
      * 动态规划的思想
      * 首先添加一个空集合 然后逐个向这个空集合中添加新元素即成为一个新的子集
-     * 遍历到1时 添加一个1 此时集合变成[[],[1]]
+     * <p>
+     * 遍历到1时 添加1 此时集合变成[[],[1]]
+     * <p>
      * 遍历到2时 添加2 此时集合变成 [[],[1],[2],[1,2]]
+     * <p>
      * 遍历到3时 添加3 此时集合变成[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
      *
      * @param nums
