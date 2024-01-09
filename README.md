@@ -67,7 +67,19 @@
 
 回溯的另一个大类题型，排列。排列是跟元素顺序有关的，也即一个元素用过之后就不能再用了，元素之间交换位置就是两个不同的组合。  
 这个全排列关键在于使用一个visited数组来记录曾访问过哪些元素，访问过的元素不可以在访问了。[Permute](src/_46_Permute.java)
-  
+
+---
+
+### [47.全排列II](https://leetcode.cn/problems/permutations-ii/)
+
+在[46.全排列](#46全排列)的基础上增加了去重操作。
+
+```
+if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
+    continue;
+ }
+```
+
 ---
 
 ### [7.电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/)
@@ -86,7 +98,7 @@ digits的长度即是目标字符串长度，str的长度才是每次回溯选�
 
 ### [90.子集II](https://leetcode.cn/problems/subsets-ii/description/)
 
-组合中的一个题型，求子集但是要去重，相当于[78.子集](#78子集)题目和全排列II的组合题，求子集还要去重。
+组合中的一个题型，求子集但是要去重，相当于[78.子集](#78子集)题目和[47.全排列II](#47全排列II)的组合题，求子集还要去重。
 去重核心思想就是先把数组排列一下，跳过重复元素。[SubsetsWithDup](src/_90_SubsetsWithDup.java)
 
 ```
