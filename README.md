@@ -12,7 +12,7 @@
 - [x] 链表
     - [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
 - [x] 哈希表
-    - [1.两数之和](#[1.两数之和](https://leetcode.cn/problems/two-sum/))
+    - [1.两数之和](#1两数之和)
 - [x] 栈
 - [x] 队列
     - [239.滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
