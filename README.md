@@ -42,15 +42,15 @@
 
 单调队列的应用，关键在于怎么维护单调队列，两点值得注意：移出队列的时机(队列中的值不在窗口内，后来的值比队列最大值要大)，队列中保存数组下标。  
 [MaxSlidingWindow](src/_239_MaxSlidingWindow.java)
-  
----  
+
+---
 
 ### [704.二分查找](https://leetcode.cn/problems/binary-search/description/)
 
 三种写法：左闭右开，左开右开，左闭右闭，三种写法对应不同的if判断条件。  
 [DichotomousSearch](src/_704_DichotomousSearch.java)
   
----  
+---
 
 ### [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
 
@@ -61,7 +61,7 @@
 
 ### [82.删除排序链表中的重复元素II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/)
 
-链表的题目。虚拟头结点(哨兵节点)处理删除头结点的情况。两种解法：
+链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；pre记录上一个节点。两种解法：
 
 - 递归，不太好写。终止条件是cur==null或cur.next==null；后面分两种情况，有重复元素不需要跳过元素，有重复元素需要跳过所有元素(因此是while循环)。
 - 迭代，逐个遍历链表，注意到链表是排序的，因此重复元素都是相邻的。找到全部重复元素(值等于cur.val的节点)逐个跳过即可，用一个pre记录上一个不重复的元素。
