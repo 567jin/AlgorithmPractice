@@ -5,12 +5,13 @@
 每个题会写一些关键点和对应的知识点
 
 文件命名规则：\_(题目编号)\_(题目名称)
- 
+
 - [x] 数组
     - [704.二分查找](#704二分查找)
 - [x] 字符串
 - [x] 链表
     - [206.反转链表](#206反转链表)
+    - [82.删除排序链表中的重复元素II](#82删除排序链表中的重复元素II)
 - [x] 哈希表
     - [1.两数之和](#1两数之和)
 - [x] 栈
@@ -34,7 +35,7 @@
 
 哈希表的应用，哈希表的应用关键在于确定key和value，比如这个题目要求返回下标值，就需要记录值的同时记录下标值。  
 [TwoSum](src/_1_TwoSum.java)
- 
+
 ---  
 
 ### [239.滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
@@ -56,7 +57,17 @@
 三个参数，一个记录cur，一个记录cur.next，一个记录pre。  
 [ReverseList](src/_206_ReverseList.java)
   
----  
+---
+
+### [82.删除排序链表中的重复元素II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/)
+
+链表的题目。虚拟头结点(哨兵节点)处理删除头结点的情况。两种解法：
+
+- 递归，不太好写。终止条件是cur==null或cur.next==null；后面分两种情况，有重复元素不需要跳过元素，有重复元素需要跳过所有元素(因此是while循环)。
+- 迭代，逐个遍历链表，注意到链表是排序的，因此重复元素都是相邻的。找到全部重复元素(值等于cur.val的节点)逐个跳过即可，用一个pre记录上一个不重复的元素。
+  [DeleteDuplicates](src/_82_DeleteDuplicates.java)
+
+---
 
 ### [39.组合总和](https://leetcode.cn/problems/combination-sum/description/)
 
