@@ -6,6 +6,18 @@
 
 文件命名规则：\_(题目编号)\_(题目名称)
 
+- [x] 数组
+- [x] 字符串
+- [x] 链表
+- [x] 哈希表
+- [x] 栈
+- [x] 队列
+- [x] 树
+- [x] 堆
+- [x] 回溯
+- [x] 动态规划
+- [x] 数据结构的设计
+
 ## 每日一题 😡😡😡
 
 [1.两数之和](https://leetcode.cn/problems/two-sum/)
@@ -53,3 +65,11 @@
 
 排列的题型。这个题关键在于判断出for循环的终止条件是str的长度，而不是digits的长度。
 digits的长度即是目标字符串长度，str的长度才是每次回溯选择的个数。[LetterCombinations](src/_17_LetterCombinations.java)
+
+---
+[78.子集](https://leetcode.cn/problems/subsets/description/)
+
+组合的问题。可以选择回溯的方法(先递归到最深度，在回溯过程中添加值)；也可以选择动态规划的思想(逐个添加元素)
+[Subsets](src/_78_Subsets.java)
+
+
