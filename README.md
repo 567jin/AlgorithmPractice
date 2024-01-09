@@ -60,7 +60,6 @@
 
 回溯的一个大类题型，组合。组合需要一个Index来记录索引位置防止重复元素。[CombinationSum](src/_39_CombinationSum.java)
 
-  
 ---  
 
 ### [46.全排列](https://leetcode.cn/problems/permutations/description/)
@@ -68,18 +67,20 @@
 回溯的另一个大类题型，排列。排列是跟元素顺序有关的，也即一个元素用过之后就不能再用了，元素之间交换位置就是两个不同的组合。  
 这个全排列关键在于使用一个visited数组来记录曾访问过哪些元素，访问过的元素不可以在访问了。[Permute](src/_46_Permute.java)
   
----  
+---
 
 ### [7.电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/)
 
 排列的题型。这个题关键在于判断出for循环的终止条件是str的长度，而不是digits的长度。  
 digits的长度即是目标字符串长度，str的长度才是每次回溯选择的个数。[LetterCombinations](src/_17_LetterCombinations.java)
 
----  
+---
 
 ### [78.子集](https://leetcode.cn/problems/subsets/description/)
 
-组合的问题。可以选择回溯的方法(先递归到最深度，在回溯过程中添加值)；也可以选择动态规划的思想(逐个添加元素)  
+组合的问题。求子集三种解法：可以选择回溯的方法(先递归到最深度，在回溯过程中添加值)；回溯，可以先添加元素到结果集中，直至遍历完整个树；
+也可以选择动态规划的思想(逐个添加元素)；
+组合的问题，取过的元素不能再取，因此需要一个Index来标识，在遍历过程中收集所有节点即是子集，因此不能剪枝(需要完全遍历)。
 [Subsets](src/_78_Subsets.java)
 
 
