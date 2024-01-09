@@ -73,8 +73,8 @@
 ### [7.电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/)
 
 排列的题型。这个题关键在于判断出for循环的终止条件是str的长度，而不是digits的长度。  
-digits的长度即是目标字符串长度，str的长度才是每次回溯选择的个数。[LetterCombinations](src/_17_LetterCombinations.java)  
-1、这是一个标题 1 [这个地方不错，如果想看可点击跳转文件](# 标题1)
+digits的长度即是目标字符串长度，str的长度才是每次回溯选择的个数。[LetterCombinations](src/_17_LetterCombinations.java)
+
 ---  
 
 ### [78.子集](https://leetcode.cn/problems/subsets/description/)
