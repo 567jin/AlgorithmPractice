@@ -6,7 +6,7 @@ package utils;
  */
 public class ListNode {
 
-    private int val;
+    public int val;
     public ListNode next;
 
     ListNode() {
