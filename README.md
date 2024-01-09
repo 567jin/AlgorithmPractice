@@ -7,22 +7,22 @@
 文件命名规则：\_(题目编号)\_(题目名称)
 
 - [x] 数组
-    - [704.二分查找](https://leetcode.cn/problems/binary-search/description/)
+    - [704.二分查找](#704二分查找)
 - [x] 字符串
 - [x] 链表
-    - [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
+    - [206.反转链表](#206反转链表)
 - [x] 哈希表
     - [1.两数之和](#1两数之和)
 - [x] 栈
 - [x] 队列
-    - [239.滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
+    - [239.滑动窗口最大值](#239滑动窗口最大值)
 - [x] 树
 - [x] 堆
 - [x] 回溯
-    - [39.组合总和](https://leetcode.cn/problems/combination-sum/description/)
-    - [46.全排列](https://leetcode.cn/problems/permutations/description/)
-    - [7.电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/)
-    - [78.子集](https://leetcode.cn/problems/subsets/description/)
+    - [39.组合总和](#39组合总和)
+    - [46.全排列](#46全排列)
+    - [7.电话号码的字母组合](#7电话号码的字母组合)
+    - [78.子集](#78子集)
 - [x] 动态规划
 - [x] 数据结构的设计
 
