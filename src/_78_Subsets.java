@@ -59,7 +59,7 @@ public class _78_Subsets {
         for (int i = 0; i < nums.length; i++) {
             int size = lists.size();
             for (int j = 0; j < size; j++) {
-                List<Integer> list = new ArrayList<>(lists.get(j));
+                List<Integer> list = new ArrayList<>(lists.get(j));  // 取出结果集中的子集 往里添加新元素 变成新子集
                 list.add(nums[i]);
                 lists.add(new ArrayList<>(list));
             }
