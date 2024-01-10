@@ -37,6 +37,7 @@ public class _83_DeleteDuplicates {
             while (head.next != null && head.val == head.next.val) {
                 head = head.next;
             }
+            // 这里返回的是head 删除重复节点II返回的是head.next 因为这里需要保留重复节点中的一个 上面删完之后 head就是重复元素中的一个
             return deleteDuplicates2(head);
         }
 
