@@ -53,7 +53,73 @@
 
 三种写法：左闭右开，左开右开，左闭右闭，三种写法对应不同的if判断条件。  
 [DichotomousSearch](src/_704_DichotomousSearch.java)
+
+---
+
+### [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
+
+三个参数，一个记录cur，一个记录cur.next，一个记录pre。  
+[ReverseList](src/_206_ReverseList.java)
   
+---
+
+### [83.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
+
+链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；两种写法
+
+- 递归写法，问题可以分解成多个子问题，递归的思想。终止条件是cur==null或cur.next==null；后面分删除节点和不删除节点，不删除节点就是head.nex=deleteDuplicates(head.next)
+  ;删除节点while循环
+- 遍历，遍历找到重复节点逐个删除即可，因为需要保留重复节点中的一个，因此不需要pre记录上一个未被删除节点。
+  [DeleteDuplicates](src/_83_DeleteDuplicates.java)
+
+---
+
+### [82.删除排序链表中的重复元素II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/)
+
+链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；pre记录上一个不重复的节点。两种解法：
+
+- 递归，不太好写。终止条件是cur==null或cur.next==null；后面分两种情况，有重复元素不需要跳过元素，有重复元素需要跳过所有元素(因此是while循环)。
+- 迭代，逐个遍历链表，注意到链表是排序的，因此重复元素都是相邻的。找到全部重复元素(值等于cur.val的节点)逐个跳过即可，用一个pre记录上一个不重复的元素。
+  [DeleteDuplicates](src/_82_DeleteDuplicates.java)
+
+---
+
+### [2.两数相加](https://leetcode.cn/problems/add-two-numbers/)
+
+两数相加但是链表，加法运算是从低位到高位开始的，并且会涉及到进位，因此不仅需要计算两个节点值的加add还要计算进位carry。
+代码里有很多判空的三元表达式，并且最后的进位carry也要处理。
+[AddTwoNumbers](src/_2_AddTwoNumbers.java)
+
+---
+
+### [141.环形链表](https://leetcode.cn/problems/linked-list-cycle/)
+
+双指针，快慢指针的应用,链表中如果有环，则两个指针都会进入到环中，并且由于一个快一个慢，终将相遇；无环将永不相遇。
+
+哈希表的解法，创建一个哈希表，遍历链表，不断地将节点添加进哈希表中，如果有相等的说明有环，反之无环，但是会占用额外的存储空间。
+[HasCycle](src/_141_HasCycle.java)
+
+---
+
+### [142.环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
+
+与[141.环形链表](#141环形链表)相似，也是两种解法：
+
+- 哈希表，用一个哈希表记录一下，重复的节点就是环的入口点。哈希表中第一个相同的节点，就是环的入口节点。
+- 快慢指针法，但是要用到一个推理，当判断有环后，slow回到原点，同时与fast前进一步终会相遇，且相遇点就是环的入口点。
+
+---
+
+### [19.删除链表的倒数第N个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
+
+这个题的关键在于怎样定位到待删除节点，或者说得到链表的长度(然后遍历即可找到待删除节点),小细节就是注意头结点的删除，因此要用到虚拟头节点。
+三种解法：
+
+- 双指针定位待删除节点
+- 链表长度，定位到长度，就可以定位到待删除节点了。
+- 栈，倒数的方式，最适合栈这种先进后出的数据结构了，第N个弹栈的就是待删除节点，N+1个弹栈的就是其前驱结点。
+  [RemoveNthFromEnd](src/_19_RemoveNthFromEnd.java)
+
 ---
 
 ### [1.两数之和](https://leetcode.cn/problems/two-sum/)
@@ -122,72 +188,6 @@
 - 递归，注意比较的条件left.left和right.right比，left.right和right.left比，和其他不相称的条件判断。
 - 迭代，两种实现**栈和队列**(栈和队列在这里都一样，因为只要保证相邻节点是要比较的节点即可，无关节点进出顺序)，不太好写，主要是比较是成对比较的，因此队列/栈中添加元素也是成对添加的，不太好想到。
   [IsSymmetric](src/_101_IsSymmetric.java)
-
----
-
-### [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
-
-三个参数，一个记录cur，一个记录cur.next，一个记录pre。  
-[ReverseList](src/_206_ReverseList.java)
-  
----
-
-### [83.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
-
-链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；两种写法
-
-- 递归写法，问题可以分解成多个子问题，递归的思想。终止条件是cur==null或cur.next==null；后面分删除节点和不删除节点，不删除节点就是head.nex=deleteDuplicates(head.next)
-  ;删除节点while循环
-- 遍历，遍历找到重复节点逐个删除即可，因为需要保留重复节点中的一个，因此不需要pre记录上一个未被删除节点。
-  [DeleteDuplicates](src/_83_DeleteDuplicates.java)
-
----
-
-### [82.删除排序链表中的重复元素II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/)
-
-链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；pre记录上一个不重复的节点。两种解法：
-
-- 递归，不太好写。终止条件是cur==null或cur.next==null；后面分两种情况，有重复元素不需要跳过元素，有重复元素需要跳过所有元素(因此是while循环)。
-- 迭代，逐个遍历链表，注意到链表是排序的，因此重复元素都是相邻的。找到全部重复元素(值等于cur.val的节点)逐个跳过即可，用一个pre记录上一个不重复的元素。
-  [DeleteDuplicates](src/_82_DeleteDuplicates.java)
-
----
-
-### [2.两数相加](https://leetcode.cn/problems/add-two-numbers/)
-
-两数相加但是链表，加法运算是从低位到高位开始的，并且会涉及到进位，因此不仅需要计算两个节点值的加add还要计算进位carry。
-代码里有很多判空的三元表达式，并且最后的进位carry也要处理。
-[AddTwoNumbers](src/_2_AddTwoNumbers.java)
-
----
-
-### [141.环形链表](https://leetcode.cn/problems/linked-list-cycle/)
-
-双指针，快慢指针的应用,链表中如果有环，则两个指针都会进入到环中，并且由于一个快一个慢，终将相遇；无环将永不相遇。
-
-哈希表的解法，创建一个哈希表，遍历链表，不断地将节点添加进哈希表中，如果有相等的说明有环，反之无环，但是会占用额外的存储空间。
-[HasCycle](src/_141_HasCycle.java)
-
----
-
-### [142.环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
-
-与[141.环形链表](#141环形链表)相似，也是两种解法：
-
-- 哈希表，用一个哈希表记录一下，重复的节点就是环的入口点。哈希表中第一个相同的节点，就是环的入口节点。
-- 快慢指针法，但是要用到一个推理，当判断有环后，slow回到原点，同时与fast前进一步终会相遇，且相遇点就是环的入口点。
-
----
-
-### [19.删除链表的倒数第N个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
-
-这个题的关键在于怎样定位到待删除节点，或者说得到链表的长度(然后遍历即可找到待删除节点),小细节就是注意头结点的删除，因此要用到虚拟头节点。
-三种解法：
-
-- 双指针定位待删除节点
-- 链表长度，定位到长度，就可以定位到待删除节点了。
-- 栈，倒数的方式，最适合栈这种先进后出的数据结构了，第N个弹栈的就是待删除节点，N+1个弹栈的就是其前驱结点。
-  [RemoveNthFromEnd](src/_19_RemoveNthFromEnd.java)
 
 ---
 
