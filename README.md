@@ -21,6 +21,7 @@
     - [239.滑动窗口最大值](#239滑动窗口最大值)
 - [x] 树
     - [144.二叉树的前序遍历](#144二叉树的前序遍历)
+    - [94.二叉树的中序遍历](#94二叉树的中序遍历)
 - [x] 堆
 - [x] 回溯
     - [39.组合总和](#39组合总和)
@@ -56,7 +57,13 @@
 - 递归的深度优先搜索
 - 迭代的深度优先搜索
 
-层序遍历迭代使用队列。深度遍历使用栈。
+层序遍历迭代使用队列。深度遍历使用栈。[PreorderTraversal](src/_144_PreorderTraversal.java)
+
+---
+
+### [94.二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/)
+
+[如前所述](#144二叉树的前序遍历).[InorderTraversal](src/_94_InorderTraversal.java)
 
 ---
 
