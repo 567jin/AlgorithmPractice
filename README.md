@@ -32,6 +32,7 @@
     - [145.二叉树的后序遍历](#145二叉树的后序遍历)
     - [102.二叉树的层序遍历](#102二叉树的层序遍历)
     - [104.二叉树的最大深度](#104二叉树的最大深度)
+    - [101.对称二叉树](#101对称二叉树)
 
 - [x] 堆
 - [x] 回溯
@@ -102,7 +103,18 @@
 ### [104.二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
 
 深度优先搜索，每次dfs都是深度加1，因此dfs(root,depth+1)不断地递归，直到root==null即可找到最大深度。
+当然了广度优先搜索也可以，但是麻烦了。
 [MaxDepth](src/_104_MaxDepth.java)
+
+---
+
+### [101.对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
+
+两种写法：
+
+- 递归，注意比较的条件left.left和right.right比，left.right和right.left比，和其他不相称的条件判断。
+- 迭代，不太好写，主要是比较是成对比较的，因此队列中添加元素也是成对添加的，并且一开始队列中的元素是两个root，不太好想到。
+  [IsSymmetric](src/_101_IsSymmetric.java)
 
 ---
 
