@@ -2,6 +2,7 @@ import utils.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @author jzy
@@ -41,7 +42,7 @@ public class _101_IsSymmetric {
     }
 
     /**
-     * 迭代写法
+     * 迭代写法 队列实现
      */
     private boolean check(TreeNode left, TreeNode right) {
         Queue<TreeNode> queue = new LinkedList<>();
@@ -64,6 +65,40 @@ public class _101_IsSymmetric {
 
             queue.offer(left.right);
             queue.offer(right.left);
+        }
+
+        return true;
+    }
+
+    /**
+     * 迭代写法 栈的实现
+     */
+    public boolean isSymmetric2(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root.left);
+        stack.push(root.right);
+
+        while (!stack.isEmpty()) {
+            TreeNode right = stack.pop();
+            TreeNode left = stack.pop();
+
+            if (left == null && right == null) {
+                continue;
+            }
+
+            if (left == null || right == null || left.val != right.val) {
+                return false;
+            }
+            // 重点是下面压入栈的次序 压栈的顺序必须是未来弹栈要比较的两个节点
+            stack.push(left.left);
+            stack.push(right.right);
+
+            stack.push(left.right);
+            stack.push(right.left);
         }
 
         return true;
