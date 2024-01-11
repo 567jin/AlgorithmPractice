@@ -21,12 +21,17 @@ public class ListNode {
         this.next = next;
     }
 
+    /**
+     * 生成链表
+     *
+     * @param nums 数组
+     * @return 链表头结点
+     */
     public static ListNode genList(int[] nums) {
         ListNode head = new ListNode(nums[0]);
         ListNode cur = head;
         for (int i = 1; i < nums.length; i++) {
-            ListNode newNode = new ListNode(nums[i]);
-            cur.next = newNode;
+            cur.next = new ListNode(nums[i]);
             cur = cur.next;
         }
 
@@ -41,27 +46,23 @@ public class ListNode {
     public static void printList(ListNode head) {
         ListNode cur = head;
         while (cur != null) {
-            System.out.print(cur.getVal() + ", ");
+            System.out.print(cur.val + ", ");
             cur = cur.next;
         }
         System.out.println();
 
     }
 
-
-    public int getVal() {
-        return val;
-    }
-
-    public void setVal(int val) {
-        this.val = val;
-    }
-
-    public ListNode getNext() {
-        return next;
-    }
-
-    public void setNext(ListNode next) {
-        this.next = next;
+    /**
+     * 得到链表个数
+     */
+    public static int getSize(ListNode head) {
+        ListNode cur = head;
+        int size = 0;
+        while (cur != null) {
+            size++;
+            cur = cur.next;
+        }
+        return size;
     }
 }
