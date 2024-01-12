@@ -15,9 +15,9 @@
     - [83.删除排序链表中的重复元素](#83删除排序链表中的重复元素)
     - [82.删除排序链表中的重复元素II](#82删除排序链表中的重复元素II)
     - [2.两数相加](#2两数相加)
-    - [141.环形链表](#141环形链表)
-    - [142.环形链表II](#142环形链表II)
-    - [19.删除链表的倒数第N个结点](#19删除链表的倒数第N个结点)
+    - [141.环形链表](#141环形链表)--两种解法(双指针，哈希表)
+    - [142.环形链表II](#142环形链表II)--两种解法(双指针(一个推理判断入口)，哈希表)
+    - [19.删除链表的倒数第N个结点](#19删除链表的倒数第N个结点)--三种解法(双指针，统计长度，栈)
 
 
 - [x] 哈希表
@@ -39,7 +39,7 @@
 - [x] 回溯
     - [39.组合总和](#39组合总和)
     - [46.全排列](#46全排列)
-    - [47.全排列II](#47全排列II)
+    - [47.全排列II](#47全排列II)--去重技巧
     - [7.电话号码的字母组合](#7电话号码的字母组合)
     - [78.子集](#78子集)
     - [90.子集II](#90子集II)
@@ -201,7 +201,7 @@
 
 在[46.全排列](#46全排列)的基础上增加了去重操作。
 这里出现重复的原因是数组中两个重复元素比如 1, 1,... xx.标记为1a和1b，出现重复的原因就是1a,1b 和1b,1a的出现，因为排列是顺序敏感的，1a和1b交换位置就是两个不同的排列。
-因此去重的关键就是限制1a和1b的访问顺序。[题解](https://leetcode.cn/problems/permutations-ii/solutions/2601182/fang-wen-shun-xu-min-gan-de-quan-pai-lie-6zga/)
+因此去重的关键就是限制1a和1b的访问顺序。[LeetCode题解](https://leetcode.cn/problems/permutations-ii/solutions/2601182/fang-wen-shun-xu-min-gan-de-quan-pai-lie-6zga/)
 
 visited[i-1]与!visited[i-1]的区别：
 
@@ -213,6 +213,8 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
     continue;
  } 
 ```
+
+[PermuteUnique](src/_47_PermuteUnique.java)
 
 ### [7.电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/)
 
