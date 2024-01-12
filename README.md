@@ -54,12 +54,12 @@
 
 ### [704.二分查找](https://leetcode.cn/problems/binary-search/description/)
 
-三种写法：左闭右开，左开右开，左闭右闭，三种写法对应不同的if判断条件。  
+三种写法：左闭右开，左开右开，左闭右闭，三种写法对应不同的if判断条件.
 [DichotomousSearch](src/_704_DichotomousSearch.java)
 
 ### [15.三数之和](https://leetcode.cn/problems/3sum/description/)🔞
 
-使用哈希表很难，主要难在去重。这题很巧妙的使用三指针，首先对数组进行排序，然后使用三指针，第一个指针指向第一个元素，第二个指向第二个元素，第三个指向最后一个元素，
+使用哈希表很难，主要难在去重。这题很巧妙地使用三指针，首先对数组进行排序，然后使用三指针，第一个指针指向第一个元素，第二个指向第二个元素，第三个指向最后一个元素，
 然后固定第一个指针，移动后面两个指针，如果三个数之和大于0，说明三个数之和太大，需要左移第二个指针；
 如果三个数之和小于0，说明三个数之和太小，需要右移第三个指针；如果三个数之和等于0，说明找到了三个数之和为0，添加进结果集，然后去重继续找。[ThreeSum](src/_15_ThreeSum.java)
 
@@ -69,15 +69,15 @@
 
 ### [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
 
-三个参数，一个记录cur，一个记录cur.next，一个记录pre。  
+三个参数，一个记录cur，一个记录cur.next，一个记录pre.
 [ReverseList](src/_206_ReverseList.java)
 
 ### [83.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
 
 链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；两种写法
 
-- 递归写法，问题可以分解成多个子问题，递归的思想。终止条件是cur==null或cur.next==null；后面分删除节点和不删除节点，不删除节点就是head.nex=deleteDuplicates(head.next)
-  ;删除节点while循环
+- 递归写法，问题可以分解成多个子问题，递归的思想。终止条件是cur==null或cur.next==null;后面分删除节点和不删除节点，不删除节点就是head.nex=deleteDuplicates(head.next)
+  ;删除节点使用while循环
 - 遍历，遍历找到重复节点逐个删除即可，因为需要保留重复节点中的一个，因此不需要pre记录上一个未被删除节点。
   [DeleteDuplicates](src/_83_DeleteDuplicates.java)
 
