@@ -31,6 +31,8 @@ public class _47_PermuteUnique {
             return;
         }
         for (int i = 0; i < nums.length; i++) {
+            // visited[i - 1] 只取1b 1a只有当visit nums[i]之后我们才去visit nums[i-1] 即visited[i - 1]访问过(因为要先访问后者1b) 直接continue
+            // !visited[i - 1] 这个只取1a 1b只有当visit nums[i-1]之后我们才去visit nums[i] 即visited[i - 1]没被访问过(因为要先访问前者) 直接continue
             if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {
                 continue;
             }

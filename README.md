@@ -200,6 +200,13 @@
 ### [47.全排列II](https://leetcode.cn/problems/permutations-ii/)
 
 在[46.全排列](#46全排列)的基础上增加了去重操作。
+这里出现重复的原因是数组中两个重复元素比如 1, 1,... xx.标记为1a和1b，出现重复的原因就是1a,1b 和1b,1a的出现，因为排列是顺序敏感的，1a和1b交换位置就是两个不同的排列。
+因此去重的关键就是限制1a和1b的访问顺序。[题解](https://leetcode.cn/problems/permutations-ii/solutions/2601182/fang-wen-shun-xu-min-gan-de-quan-pai-lie-6zga/)
+
+visited[i-1]与!visited[i-1]的区别：
+
+- visited[i - 1] 只取1b 1a只有当visit nums[i]之后我们才去visit nums[i-1] 即visited[i - 1]访问过(因为要先访问后者1b) 直接continue
+- !visited[i - 1] 这个只取1a 1b只有当visit nums[i-1]之后我们才去visit nums[i] 即visited[i - 1]没被访问过(因为要先访问前者) 直接continue
 
 ```
 if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
