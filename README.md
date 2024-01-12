@@ -50,7 +50,7 @@
 
 ## 每日一题 🤢🤮🤬😡🥵🥰
 
-[//]: # "数组"
+<!--数组-->
 
 ### [704.二分查找](https://leetcode.cn/problems/binary-search/description/)
 
@@ -65,7 +65,7 @@
 
 ---
 
-[//]: # "链表"
+<!--链表-->
 
 ### [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)
 
@@ -121,7 +121,7 @@
 
 ---
 
-[//]: # "哈希表"
+<!--哈希表-->
 
 ### [1.两数之和](https://leetcode.cn/problems/two-sum/)
 
@@ -130,7 +130,7 @@
 
 ---
 
-[//]: # "队列"
+<!--队列-->
 
 ### [239.滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
 
@@ -139,7 +139,7 @@
 
 ---
 
-[//]: # "二叉树"
+<!--二叉树-->
 
 ### [144.二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/description/)
 
@@ -187,7 +187,7 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 
 ---
 
-[//]: # "回溯"
+<!--回溯-->
 
 ### [39.组合总和](https://leetcode.cn/problems/combination-sum/description/)
 
@@ -257,7 +257,7 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
 
 ---
 
-[//]: # "技巧"
+<!--技巧-->
 
 ### [136.只出现一次的数字](https://leetcode.cn/problems/single-number/)
 
