@@ -43,6 +43,7 @@ public class _15_ThreeSum {
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
+                    // 找到一组了 需要在nums[i]的基础上继续找下一组
                     left++;
                     right--;
                 } else if (nums[i] + nums[left] + nums[right] < 0) {
