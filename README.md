@@ -46,6 +46,8 @@
   - [7.电话号码的字母组合](#7电话号码的字母组合)
   - [78.子集](#78子集)
   - [90.子集II](#90子集ii)
+  - [51.N皇后](#51n皇后)🔞
+
 - [x] 动态规划
 - [x] 数据结构的设计
 - [x] 技巧题
@@ -64,11 +66,10 @@
 
 使用哈希表很难，主要难在去重(去重要点是，当前数和后一个数相等(或前一个数)则需要跳过)。这题很巧妙地使用三指针，首先对数组进行排序，然后使用三指针，第一个指针指向第一个元素，第二个指向第二个元素，第三个指向最后一个元素(左闭右闭的形式更方便计算三数和)，
 然后固定第一个指针，移动后面两个指针，如果三个数之和大于0，说明三个数之和太大，需要左移第二个指针；
-如果三个数之和小于0，说明三个数之和太小，需要右移第三个指针；如果三个数之和等于0，说明找到了三个数之和为0，添加进结果集，然后在num\[i\]的基础上继续找(left++, right--)。[ThreeSum](src/_15_ThreeSum.java)
+如果三个数之和小于0，说明三个数之和太小，需要右移第三个指针；如果三个数之和等于0，说明找到了三个数之和为0，添加进结果集，然后在num\[i\]的基础上继续找(left++,
+right--)。[ThreeSum](src/_15_ThreeSum.java)
 
-<div style="text-align:center;">
-<a href="#index">⬆ Back to Index</a>
-</div>
+[⬆ Back to Index](#index)
 
 ---
 
@@ -139,13 +140,15 @@
 ### [49.字母异位词分组](https://leetcode.cn/problems/group-anagrams/description/)
 
 异位词的特点：由相同字符组成，但是顺序不同。因此其特点是互为异位词的字符顺序经过排序后的字符相同，或字符的统计个数是相同的。因此可以得到两种解法(都是基于哈希的只是键的选择不同)：
- - 排序后的字符当做key，
- ```
-    Arrays.sort(chars);
-    List<String> list = map.getOrDefault(String.valueOf(chars), new ArrayList<String>());
- ```
-  - 统计字符个数的数组当做key，此解法需要一个数组来统计字符出现的次数，并转成字符串之后当做key，其实最直接的是把数组当做键，但是Java不支持这样做(可以让数组的hashCode当做key)
-[LeetCode 字母异位词哈希表中 Key 的选择](https://leetcode.cn/problems/group-anagrams/solutions/2604788/zi-mu-yi-wei-ci-ha-xi-biao-zhong-keyde-x-me1t/)
+- 排序后的字符当做key，
+
+```
+   Arrays.sort(chars);
+   List<String> list = map.getOrDefault(String.valueOf(chars), new ArrayList<String>());
+```
+
+- 统计字符个数的数组当做key，此解法需要一个数组来统计字符出现的次数，并转成字符串之后当做key，其实最直接的是把数组当做键，但是Java不支持这样做(可以让数组的hashCode当做key)
+  [LeetCode 字母异位词哈希表中 Key 的选择](https://leetcode.cn/problems/group-anagrams/solutions/2604788/zi-mu-yi-wei-ci-ha-xi-biao-zhong-keyde-x-me1t/)
 
 [GroupAnagrams](src/_49_GroupAnagrams.java)
 
@@ -276,7 +279,12 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
  }
 ```
 
----
+### [51.N皇后](https://leetcode.cn/problems/n-queens/description/)
+
+很难，但主要还是用回溯，关键在于判断落棋的条件。棋盘的宽度就是for循环的长度，递归的深度就是棋盘的高度
+[SolveNQueens](src/_51_SolveNQueens.java)
+
+----
 
 <!--技巧-->
 
