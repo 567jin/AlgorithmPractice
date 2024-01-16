@@ -139,6 +139,9 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 栈，倒数的方式，最适合栈这种先进后出的数据结构了，第N个弹栈的就是待删除节点，N+1个弹栈的就是其前驱结点。
   [RemoveNthFromEnd](src/_19_RemoveNthFromEnd.java)
 
+[⬆ Back to Index](#index)
+
+
 ---
 
 <!--哈希表-->
@@ -163,6 +166,9 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 [GroupAnagrams](src/_49_GroupAnagrams.java)
 
+[⬆ Back to Index](#index)
+
+
 ---
 <!--栈-->
 ### [20.有效的括号](https://leetcode.cn/problems/valid-parentheses/description/)
@@ -170,6 +176,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 还有就是两个判断语句，")))("这种情况，是stack.isEmpty()即栈中元素为零，但是要弹栈比较因此直接返回false，还有就是栈中元素有剩余，即括号没有完全配对上，需要判断栈是否为空。
 [IsValid](src/_20_IsValid.java)
 
+
+
+
+[⬆ Back to Index](#index)
 
 ---
 
@@ -179,6 +189,11 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 单调队列的应用，关键在于怎么维护单调队列，两点值得注意：移出队列的时机(队列中的值不在窗口内，后来的值比队列最大值要大)，队列中保存数组下标。  
 [MaxSlidingWindow](src/_239_MaxSlidingWindow.java)
+
+
+
+[⬆ Back to Index](#index)
+
 
 ---
 
@@ -228,6 +243,11 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 - 迭代，两种实现**栈和队列**(栈和队列在这里都一样，因为只要保证相邻节点是要比较的节点即可，无关节点进出顺序)，不太好写，主要是比较是成对比较的，因此队列/栈中添加元素也是成对添加的，不太好想到。
   [IsSymmetric](src/_101_IsSymmetric.java)
 
+
+
+
+[⬆ Back to Index](#index)
+
 ---
 
 ### [347.前K个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/description/)
@@ -257,6 +277,10 @@ minHeap.forEach(e -> res[index.getAndIncrement()] = e.getKey());
 
 [TopKFrequent](src/_347_TopKFrequent.java)
 
+
+
+
+[⬆ Back to Index](#index)
 
 ---
 
@@ -333,6 +357,9 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
 很难，但主要还是用回溯，关键在于判断落棋的条件。棋盘的宽度就是for循环的长度，递归的深度就是棋盘的高度
 [SolveNQueens](src/_51_SolveNQueens.java)
 
+
+[⬆ Back to Index](#index)
+
 ----
 
 <!--技巧-->
@@ -349,4 +376,8 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
 - a ^ a = 0; 自己异或自己等于0
 - 综合上面两个可以推出 a^b^a = b; 即三个数异或其中两个数相等则结果等于另一个数，即单值。
   [SingleNumber](src/_136_SingleNumber.java)
+
+
+
+[⬆ Back to Index](#index)
 
