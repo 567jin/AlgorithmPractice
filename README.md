@@ -42,6 +42,8 @@
   - [101.对称二叉树](#101对称二叉树)
 
 - [x] 堆
+  - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
+
 - [x] 回溯
   - [39.组合总和](#39组合总和)
   - [46.全排列](#46全排列)
@@ -225,6 +227,36 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 - 递归，注意比较的条件left.left和right.right比，left.right和right.left比，和其他不相称的条件判断。
 - 迭代，两种实现**栈和队列**(栈和队列在这里都一样，因为只要保证相邻节点是要比较的节点即可，无关节点进出顺序)，不太好写，主要是比较是成对比较的，因此队列/栈中添加元素也是成对添加的，不太好想到。
   [IsSymmetric](src/_101_IsSymmetric.java)
+
+---
+
+### [347.前K个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/description/)
+使用最小堆来找前K个最大元素,反之使用最大堆找前K个最小元素.本题是找高频元素，因此需要先使用一个map统计各元素出现的次数。
+Java中没有专门堆的实现，**优先级队列就相当于堆**，在创建优先级队列时，通过传入一个比较函数(lambda表达式, Comparator, Comparable接口)，可以实现堆元素的比较。
+
+Comparator, Comparable接口的区别:
+- 如果一个类实现了 Comparable 接口，表示该类具有自然排序的能力，并且排序的规则已经定义在类的 compare 方法中。
+- 如果你需要实现一个独立的比较器，或者想要提供多种不同的比较方式，可以使用 Comparator 接口 实现其中的compareTo方法
+
+在堆中元素转数组中，可以直接遍历的方式，也可以选择forEach函数配合Lambda表达式实现元素的转换。
+
+但要注意：
+> 在 Java 中，Lambda 表达式中引用的外部局部变量必须是 final 或 effectively final（一旦赋值后不再修改）。  
+直接使用基本数据类型的 int 变量在 Lambda 表达式中是不允许的，因为该变量无法被修改，而 Lambda 表达式可能会尝试修改该变量的值，这违反了 effectively final 的规则
+
+因此使用一个数组来包装一下Index(引用类型是可变的符合Lambda要求)，或者使用原子类AtomicInteger
+```
+使用数组包装一下index：
+final int[] index = {0};
+minHeap.forEach(e-> res[index[0]++] = e.getKey()); 
+
+或使用原子类：
+AtomicInteger index = new AtomicInteger(0);
+minHeap.forEach(e -> res[index.getAndIncrement()] = e.getKey());
+```
+
+[TopKFrequent](src/_347_TopKFrequent.java)
+
 
 ---
 
