@@ -28,6 +28,8 @@
   - [49.字母异位词分组](#49字母异位词分组)--哈希map, key的选择
 
 - [x] 栈
+  - [20.有效的括号](#20有效的括号)--栈的经典应用
+
 - [x] 队列
   - [239.滑动窗口最大值](#239滑动窗口最大值)--单调队列
 
@@ -158,6 +160,14 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
   [LeetCode 字母异位词哈希表中 Key 的选择](https://leetcode.cn/problems/group-anagrams/solutions/2604788/zi-mu-yi-wei-ci-ha-xi-biao-zhong-keyde-x-me1t/)
 
 [GroupAnagrams](src/_49_GroupAnagrams.java)
+
+---
+<!--栈-->
+### [20.有效的括号](https://leetcode.cn/problems/valid-parentheses/description/)
+本题是栈的经典用法，括号的匹配，看着简单，实际上做的时候却很有技巧，比如压栈时，判断是左括号，是把右括号压进去，而不是直接把左括号压进去，这样在弹栈判断时更容易；
+还有就是两个判断语句，")))("这种情况，是stack.isEmpty()即栈中元素为零，但是要弹栈比较因此直接返回false，还有就是栈中元素有剩余，即括号没有完全配对上，需要判断栈是否为空。
+[IsValid](src/_20_IsValid.java)
+
 
 ---
 
