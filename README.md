@@ -16,8 +16,8 @@
   - [283.移动零](#283移动零)--双指针(真移动，假移动)
 
 - [x] 字符串
-  - [58.最后一个单词的长度](#58最后一个单词的长度)
-  - [151.反转字符串中的单词](#151反转字符串中的单词)
+  - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
+  - [151.反转字符串中的单词](#151反转字符串中的单词)--双指针, sb的应用
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -103,6 +103,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 [LengthOfLastWord](src/_58_LengthOfLastWord.java)
 
 ### [151.反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/description/)
+两种解法：
+- 双指针，双指针确定单词的长度，确定单词长度后，截取即可，left-right=单词长度。left记录上一次right不为空格的索引，在right遍历到下一个空格后(两个不连续空格之间就是单词)，即可确定单词的长度。
+- 借助StringBuilder类，使用一个指针倒序遍历即可，跟58题很像，在一个循环中找到一个单词后，反转后得到真正的单词，加到结果集中即可。
+
 [ReverseWords](src/_151_ReverseWords.java)
 
 ***[⬆ Back to Index](#index)***
