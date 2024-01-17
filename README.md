@@ -3,18 +3,19 @@
 </p>
 <h1 align="center" style="font-size: 36px; text-align: center; margin-top: -30px; color: #8f4794">题目数量: 36</h1>
 <div align="center">
-<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">
-    <img alt="" src=https://github.com/567jin/AlgorithmPractice/badge/star.svg?theme=gvp"/>
-</a>
-<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">
-    <img alt="" src="https://github.com/567jin/AlgorithmPractice/badge/star.svg?theme=gvp"/>
-</a>
-<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">
-    <img alt="" src="https://img.shields.io/github/stars/567jin/AlgorithmPractice.svg?style=social&label=Stars"/>
-</a>
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
 </a>
+<!--<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">-->
+<!--    <img alt="" src=https://github.com/567jin/AlgorithmPractice/badge/star.svg?theme=gvp"/>-->
+<!--</a>-->
+<!--<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">-->
+<!--    <img alt="" src="https://github.com/567jin/AlgorithmPractice/badge/star.svg?theme=gvp"/>-->
+<!--</a>-->
+<a target="_blank" href="https://github.com/567jin/AlgorithmPractice">
+    <img alt="" src="https://img.shields.io/github/stars/567jin/AlgorithmPractice.svg?style=social&label=Stars"/>
+</a>
+
 </a>
 </div>
 
