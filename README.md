@@ -1,5 +1,7 @@
 <div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png" width="  "></div>
 
+<center><font face="霞鹜文楷 屏幕阅读版" color="#8f4794" size="7">题目数量: 36</font></center>
+
 # 刷题日记 ✍
 
 这里记录一些自己做过的算法题，题单主要来源于[代码随想录](https://programmercarl.com/)和《剑指offer》。
