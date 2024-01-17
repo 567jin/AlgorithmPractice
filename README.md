@@ -1,6 +1,10 @@
-<div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png" width="  "></div>
+<div style="font-family: '霞鹜文楷', serif; color: #8f4794;">
+    <div style="text-align: center;">
+        <img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png" alt="题目相关图片" style="max-width: 100%; margin-bottom: -10px;">
+    </div>
+    <p style="font-size: 36px;text-align: center; margin-top: -13px;">题目数量: 36</p>
+</div>
 
-<center><font face="霞鹜文楷 屏幕阅读版" color="#8f4794" size="7">题目数量: 36</font></center>
 
 # 刷题日记 ✍
 
