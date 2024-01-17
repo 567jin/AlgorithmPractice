@@ -61,6 +61,9 @@ public class TreeNode {
         return root;
     }
 
+    /**
+     * 层序遍历的方式打印树
+     */
     public static void printTree(TreeNode root) {  // 层序遍历的方式打印树
         if (root == null) {
             return;
