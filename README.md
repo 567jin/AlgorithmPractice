@@ -1,6 +1,4 @@
-
-<div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png" width="  "></div>
-
+<div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png"></div>
 <center><font face="霞鹜文楷 屏幕阅读版" color="#8f4794" size="7">题目数量: 36</font></center>
 
 
