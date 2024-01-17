@@ -1,5 +1,10 @@
-<div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png"></div>
-<center><font face="霞鹜文楷 屏幕阅读版" color="#8f4794" size="7">题目数量: 36</font></center>
+<p align="center">
+  <a href="https://www.hello-algo.com/">
+    <img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png"></a>
+<p style="font-size: 36px;text-align: center; margin-top: -30px;color: #8f4794;">题目数量: 36</p>
+</p>
+
+
 
 
 # 刷题日记 ✍
