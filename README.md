@@ -1,3 +1,5 @@
+<div align=center><img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png" width="  "></div>
+
 # 刷题日记 ✍
 
 这里记录一些自己做过的算法题，题单主要来源于[代码随想录](https://programmercarl.com/)和《剑指offer》。
@@ -15,6 +17,7 @@
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)
+  - [151.反转字符串中的单词](#151反转字符串中的单词)
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -98,6 +101,9 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ### [58.最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word/description/)
 很简单的一道题，反向遍历；或者正则表达式分隔字符串后得到一个字符串数组，数组的最后一个元素就是最后一个单词统计其长度即可，
 [LengthOfLastWord](src/_58_LengthOfLastWord.java)
+
+### [151.反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/description/)
+[ReverseWords](src/_151_ReverseWords.java)
 
 ***[⬆ Back to Index](#index)***
 
