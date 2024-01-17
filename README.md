@@ -1,7 +1,8 @@
 <p align="center">
   <a href="https://www.hello-algo.com/">
     <img src="https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png"></a>
-<p style="font-size: 36px;text-align: center; margin-top: -30px;color: #8f4794;">题目数量: 36</p>
+<br/>
+<span style="font-size: 36px; text-align: center; margin-top: -3px; color: #8f4794;">题目数量: 36</span>
 </p>
 
 
