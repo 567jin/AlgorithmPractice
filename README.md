@@ -14,6 +14,7 @@
   - [283.移动零](#283移动零)--双指针(真移动，假移动)
 
 - [x] 字符串
+  - [58.最后一个单词的长度](#58最后一个单词的长度)
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -92,7 +93,15 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ***[⬆ Back to Index](#index)***
 
 ---
+<!--字符串-->
 
+### [58.最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word/description/)
+很简单的一道题，反向遍历；或者正则表达式分隔字符串后得到一个字符串数组，数组的最后一个元素就是最后一个单词统计其长度即可，
+[LengthOfLastWord](src/_58_LengthOfLastWord.java)
+
+***[⬆ Back to Index](#index)***
+
+---
 
 <!--链表-->
 
