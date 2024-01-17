@@ -254,6 +254,9 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 - 迭代，无论是使用队列还是栈都可以，因为只需要能够遍历到每个节点并再下次循环中取出即可。推荐使用队列
 [InvertTree](src/_226_InvertTree.java)
 
+### [105.从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
+
+
 ***[⬆ Back to Index](#index)***
 
 ---
