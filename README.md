@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 38</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 39</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -43,6 +43,7 @@
   - [142.环形链表II](#142环形链表ii)--两种解法(双指针(利用一个推理来判断入口), 哈希表)
   - [19.删除链表的倒数第N个结点](#19删除链表的倒数第n个结点)--三种解法(双指针, 计算长度, 栈)
   - [160.相交链表](#160相交链表)--四种解法, 双指针、栈、哈希表、对齐(计算长度)
+  - [21.合并两个有序链表](#21合并两个有序链表)--递归🔞, 迭代🥰
 
 
 - [x] 哈希表
@@ -201,8 +202,14 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 计算二者长度后对齐，计算两链表长度后，相减得到差值，移动较长的链表，对齐后，遍历找第一个相等的节点即是相交节点。
 [GetIntersectionNode](src/_160_GetIntersectionNode.java)
 
-***[⬆ Back to Index](#index)***
 
+### [21.合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
+两种解法：
+- 迭代：很自然的想法，注意在最后别忘了判断l1的长度不等于l2长度的情况(需要拼接最后一段未进行比较的链表)
+- 递归：结束条件的返回值，l1==null，返回l2，反之也是；较小节点的next指向合并后的其余节点(即递归调用)
+
+
+***[⬆ Back to Index](#index)***
 
 ---
 
