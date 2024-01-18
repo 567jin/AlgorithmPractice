@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 37</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 38</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -32,6 +32,7 @@
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
   - [151.反转字符串中的单词](#151反转字符串中的单词)--双指针, sb的应用
+  - [28.找出字符串中第一个匹配项的下标](#28找出字符串中第一个匹配项的下标)--KMP🔞, 暴力匹配
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -103,7 +104,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [283.移动零](https://leetcode.cn/problems/move-zeroes/description/)
 两种解法，但都建立在双指针基础上：
-- 遍历，将所有非零点移动到最前面(直接覆盖)，然后slow的值就是非零点的值，最后在后面补零即可，但有点作弊，这不是真正的”移动“
+- 遍历，将所有非零点移动到最前面(直接覆盖)，然后slow的值就是非零点值的数量，最后在后面补零即可，但有点作弊，这不是真正的”移动“
 - 真正的移动，即交换零值和非零值，注意是fast!=0时才交换，要不然就是移动零到最前面了。
 [MoveZeroes](src/_283_MoveZeroes.java)
 
@@ -125,8 +126,13 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 两种解法：
 - 双指针，双指针确定单词的长度，确定单词长度后，截取即可，left-right=单词长度。left记录上一次right不为空格的索引，在right遍历到下一个空格后(两个不连续空格之间就是单词)，即可确定单词的长度。
 - 借助StringBuilder类，使用一个指针倒序遍历即可，跟58题很像，在一个循环中找到一个单词后，反转后得到真正的单词，加到结果集中即可。
-
 [ReverseWords](src/_151_ReverseWords.java)
+
+### [28.找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/)
+两种解法：
+- 暴力，遍历haystack，每次截取needle.length()长度的字符串跟needle比较。注意遍历的次数是haystack.length()-needle.length()
+- KMP，计算前缀表，根据前缀表减少回头比较的次数
+[StrStr](src/_28_StrStr.java)
 
 ***[⬆ Back to Index](#index)***
 
