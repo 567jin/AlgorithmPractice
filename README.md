@@ -33,6 +33,7 @@
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
   - [151.反转字符串中的单词](#151反转字符串中的单词)--双指针, sb的应用
   - [28.找出字符串中第一个匹配项的下标](#28找出字符串中第一个匹配项的下标)--KMP🔞, 暴力匹配
+  - [125.验证回文串](#125验证回文串)--双指针, 字符相关函数使用
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -135,6 +136,12 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 暴力，遍历haystack，每次截取needle.length()长度的字符串跟needle比较。注意遍历的次数是haystack.length()-needle.length()
 - KMP，计算前缀表，根据前缀表减少回头比较的次数
 [StrStr](src/_28_StrStr.java)
+
+### [125.验证回文串](https://leetcode.cn/problems/valid-palindrome/description/)
+两种解法：
+- 不使用内置函数，首先去掉字符串中的非字母数字，得到一个新的字符串，再在此字符串上使用双指针判断即可，注意使用while循环更好。只需判断left<right即可
+- 使用内置函数来判断字符是否是数字字母Character.isLetterOrDigit()，并使用Character.toLowerCase()转大小写(如果是非字母返回其本身)，难点在于，要用两个while循环来找到左右两边为字母数字的字符。
+[IsPalindrome](src/_125_IsPalindrome.java)
 
 ***[⬆ Back to Index](#index)***
 
