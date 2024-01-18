@@ -51,7 +51,8 @@
   - [49.字母异位词分组](#49字母异位词分组)--哈希map, key的选择
 
 - [x] 栈
-  - [20.有效的括号](#20有效的括号)--栈的经典应用
+  - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
+  - [150.逆波兰表达式求值](#150逆波兰表达式求值)--栈的经典应用
 
 - [x] 队列
   - [239.滑动窗口最大值](#239滑动窗口最大值)--单调队列
@@ -207,7 +208,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 两种解法：
 - 迭代：很自然的想法，注意在最后别忘了判断l1的长度不等于l2长度的情况(需要拼接最后一段未进行比较的链表)
 - 递归：结束条件的返回值，l1==null，返回l2，反之也是；较小节点的next指向合并后的其余节点(即递归调用)
-
+[MergeTwoLists](src/_21_MergeTwoLists.java)
 
 ***[⬆ Back to Index](#index)***
 
@@ -245,8 +246,9 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 还有就是两个判断语句，")))("这种情况，是stack.isEmpty()即栈中元素为零，但是要弹栈比较因此直接返回false，还有就是栈中元素有剩余，即括号没有完全配对上，需要判断栈是否为空。
 [IsValid](src/_20_IsValid.java)
 
-
-
+### [150.逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/description/)
+一道栈的经典应用的题目，逆波兰表达式利用了栈的先入先出的特点，简化了数学表达式的计算(仅仅利用一个栈这种计算机中很常见的数据结构)。
+[EvalRPN](src/_150_EvalRPN.java)
 
 ***[⬆ Back to Index](#index)***
 
