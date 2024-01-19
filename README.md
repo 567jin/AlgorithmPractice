@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 39</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 40</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -84,7 +84,8 @@
 - [x] 动态规划
 
 - [x] 数据结构的设计
-  - [146.LRU缓存](#146lru缓存)🔞
+  - [146.LRU缓存](#146lru缓存)🔞--HashMap+链表=LinkedHashMap
+  - [380.O(1)时间插入、删除和获取随机元素](#380-o1时间插入删除和获取随机元素)--HashMap+数组=支持O(1)查找和插入的数组
 
 - [x] 技巧题
   - [136.只出现一次的数字](#136只出现一次的数字)--异或
@@ -465,6 +466,13 @@ hashMap有O(1)的存入和查找效率，但是不记录元素插入的位置，
 使用双向链表的意义是便于删除节点，头部节点是最少使用的节点，一旦节点被使用(get)则删除该节点后，移动该节点到链表尾部(链表没有移动节点的操作，删除节点后再在新的位置插入该节点是最简单的移动节点操作)。  
 链表存储两个值key和value，这样的话便于在map中根据key删除节点，map的value存储链表的节点。
 难点在于几个辅助函数和删除逻辑的判断。
+
+### [380-o1时间插入删除和获取随机元素](https://leetcode.cn/problems/insert-delete-getrandom-o1/description/)
+hashmap的插入和删除是O(1)但是无法根据索引定位， 数组支持随机访问 但是插入或查找不是O(1)。
+因此结合二者，hashmap用来保存值和其在数组中对应的索引，数组来保存值，用来实现getRandom()方法随机返回值。
+map中的key是值，val是下标，注意数组的下标从0开始。map中保存的是**真实的下标值还是需要减1的下标值是个坑**，不一样的选择，后面操作就决定了是否要减1。
+[RandomizedSet](src/_380_RandomizedSet.java)
+
 
 ***[⬆ Back to Index](#index)***
 
