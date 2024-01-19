@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 40</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 45</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -70,6 +70,7 @@
   - [105.从前序与中序遍历序列构造二叉树](#105从前序与中序遍历序列构造二叉树)--前序找根, 中序分割
   - [230.二叉搜索树中第K小的元素](#230二叉搜索树中第k小的元素)--中序遍历, 二叉搜索树的性质
   - [106.从中序与后序遍历序列构造二叉树](#106从中序与后序遍历序列构造二叉树)--后序遍历就是倒着的前序遍历, 后序找根, 中序分割
+  - [112.路径总和](#112路径总和)--递归(隐含回溯), 迭代(所有节点对应的路径和)
 
 - [x] 堆
   - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
@@ -352,6 +353,30 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 ### [106.从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/)
 **后序遍历就是倒着的前序遍历**，因此本题与105题的解法是一样的。注意使用递归的方式，迭代的方式太麻烦了。
 [BuildTree](src/_106_BuildTree.java)
+
+### [112.路径总和](https://leetcode.cn/problems/path-sum/description/)
+两种解法：
+- 递归，这题递归反而更简单了。递归过程中找到根节点判断一下即可，反之则继续寻找。这里的递归隐含着回溯，**归的过程就是回溯的过程**。
+- 迭代，使用队列保存节点及其节点对应的路径和，一旦该节点是叶子结点并且保存的对应的路径和是targetNum则返回true。注意，可以使用两个队列，一个队列用于层序遍历，另一个队列保存对应节点的路径和;或者直接使用一个队列，队列中的元素是一个Object\[\]数组，直接保存这两个值。
+
+迭代一个值得注意的概念是，节点路径和，这里保存的是每个节点的路径和，根节点到此节点之间所有节点的和。通过迭代所有节点的路径和来找到符合条件的路径和。
+具体示例如下:
+```java
+/*
+		    1
+		  /   \
+		 2     3
+		/ \   / \
+	   4   5 6   7
+节点1的路径和是1
+节点2的路径和是1+2=3
+节3的路径和是1+3=4
+...
+节点6的路径和是1+3+6=10
+节点7的路径和是1+3+7=11
+*/
+```
+[HasPathSum](src/_112_HasPathSum.java)
 
 ***[⬆ Back to Index](#index)***
 
