@@ -50,6 +50,7 @@
 - [x] 哈希表
   - [1.两数之和](#1两数之和)--哈希表set
   - [49.字母异位词分组](#49字母异位词分组)--哈希map, key的选择
+  - [383.赎金信](#383赎金信)
 
 - [x] 栈
   - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
@@ -243,6 +244,11 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
   [LeetCode 字母异位词哈希表中 Key 的选择](https://leetcode.cn/problems/group-anagrams/solutions/2604788/zi-mu-yi-wei-ci-ha-xi-biao-zhong-keyde-x-me1t/)
 
 [GroupAnagrams](src/_49_GroupAnagrams.java)
+
+
+### [383.赎金信](https://leetcode.cn/problems/ransom-note/description/)
+简单的统计字符的题，难点在于先统计谁的值，这里先统计magazine中的字符，再在另一个字符遍历过程中，如果没有即record\[c-'a'\]==0则返回false。
+[CanConstruct](src/_383_CanConstruct.java)
 
 ***[⬆ Back to Index](#index)***
 
