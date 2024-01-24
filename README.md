@@ -59,6 +59,7 @@
 
 - [x] 队列
   - [239.滑动窗口最大值](#239滑动窗口最大值)--单调队列
+  - [209.长度最小的子数组](#209长度最小的子数组)--队列, 双指针确定窗口
 
 - [x] 树
   - [144.二叉树的前序遍历](#144二叉树的前序遍历)
@@ -284,7 +285,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 单调队列的应用，关键在于怎么维护单调队列，两点值得注意：移出队列的时机(队列中的值不在窗口内，后来的值比队列最大值要大)，队列中保存数组下标。  
 [MaxSlidingWindow](src/_239_MaxSlidingWindow.java)
 
-
+### [209.长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/description/)
+窗口值，用两个指针或队列来当做滑动窗口，用一个变量sum记录窗口内所有元素的和。当元素和大于等于target时就更新最小长度，否则继续往窗口内添加值。
+注意，题目要求的是**大于等于，而不是等于**。
+[MinSubArrayLen](src/_209_MinSubArrayLen.java)
 
 ***[⬆ Back to Index](#index)***
 
