@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 45</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 48</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -73,6 +73,7 @@
   - [230.二叉搜索树中第K小的元素](#230二叉搜索树中第k小的元素)--中序遍历, 二叉搜索树的性质
   - [106.从中序与后序遍历序列构造二叉树](#106从中序与后序遍历序列构造二叉树)--后序遍历就是倒着的前序遍历, 后序找根, 中序分割
   - [112.路径总和](#112路径总和)--递归(隐含回溯), 迭代(所有节点对应的路径和)
+  - [199.二叉树的右视图](#199二叉树的右视图)--层序遍历, 递归记录层数
 
 - [x] 堆
   - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
@@ -388,6 +389,12 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 */
 ```
 [HasPathSum](src/_112_HasPathSum.java)
+
+### [199.二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/description/)
+两种解法：层序遍历最直接。递归的方法，需要额外的变量来记录递归的层数，每一层最先到达的节点就是最右节点(**注意是先右后左的顺序递归的**)。每一次递归代表来到了新的层，有多少层就是多少栈深，**递归的深度反映了在二叉树深度优先遍历中的层次**。
+- 层序遍历(广度优先搜索)，迭代，从题目中可知右视图就是树的每一层的最右边的节点值，那么在层序遍历时，最后一次的节点就是右边的节点(先左后右进队列的情况，反之是左视图)。
+- 深度遍历(深度优先搜索)，递归，在递归时，只需要判断每一层(也即每一个深度)最先到达的节点就是右视图(因为按照先右后左递归的，那么在每一层递归时，第一个到达的节点就是每一层的最右节点)
+[RightSideView](src/_199_RightSideView.java)
 
 ***[⬆ Back to Index](#index)***
 
