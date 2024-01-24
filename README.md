@@ -34,6 +34,7 @@
   - [151.反转字符串中的单词](#151反转字符串中的单词)--双指针, sb的应用
   - [28.找出字符串中第一个匹配项的下标](#28找出字符串中第一个匹配项的下标)--KMP🔞, 暴力匹配
   - [125.验证回文串](#125验证回文串)--双指针, 字符相关函数使用
+  - [14.最长公共前缀](#14最长公共前缀)--横向, 纵向比较确定公共部分
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -146,6 +147,12 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 不使用内置函数，首先去掉字符串中的非字母数字，得到一个新的字符串，再在此字符串上使用双指针判断即可，注意使用while循环更好。只需判断left<right即可
 - 使用内置函数来判断字符是否是数字字母Character.isLetterOrDigit()，并使用Character.toLowerCase()转大小写(如果是非字母返回其本身)，难点在于，要用两个while循环来找到左右两边为字母数字的字符。
 [IsPalindrome](src/_125_IsPalindrome.java)
+
+### [14.最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/description/)
+两种解法，两种角度：
+- 横向来看，最长公共前缀，就是两两比较，不断更新prefix，这样全部比较完后prefix就是最长公共前缀了。即所有字符串的最长公共前缀
+- 纵向来看，最长公共前缀就是逐次比较每个字符串相应位置的字符，直到不相等，则出现最长公共前缀(但要注意判断字符长度)。即横向扫描
+[LongestCommonPrefix](src/_14_LongestCommonPrefix.java)
 
 ***[⬆ Back to Index](#index)***
 
