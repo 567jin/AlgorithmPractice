@@ -116,10 +116,9 @@
 right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [283.移动零](https://leetcode.cn/problems/move-zeroes/description/)
-两种解法，但都建立在双指针基础上：
+两种解法，但都建立在双指针基础上：[MoveZeroes](src/_283_MoveZeroes.java)
 - 遍历，将所有非零点移动到最前面(直接覆盖)，然后slow的值就是非零点值的数量，最后在后面补零即可，但有点作弊，这不是真正的”移动“
 - 真正的移动，即交换零值和非零值，注意是fast!=0时才交换，要不然就是移动零到最前面了。
-[MoveZeroes](src/_283_MoveZeroes.java)
 
 
 ### [238.除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/description/)
@@ -136,28 +135,28 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 [LengthOfLastWord](src/_58_LengthOfLastWord.java)
 
 ### [151.反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/description/)
-两种解法：
+两种解法：[ReverseWords](src/_151_ReverseWords.java)
 - 双指针，双指针确定单词的长度，确定单词长度后，截取即可，left-right=单词长度。left记录上一次right不为空格的索引，在right遍历到下一个空格后(两个不连续空格之间就是单词)，即可确定单词的长度。
 - 借助StringBuilder类，使用一个指针倒序遍历即可，跟58题很像，在一个循环中找到一个单词后，反转后得到真正的单词，加到结果集中即可。
-[ReverseWords](src/_151_ReverseWords.java)
+
 
 ### [28.找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/)
-两种解法：
+两种解法：[StrStr](src/_28_StrStr.java)
 - 暴力，遍历haystack，每次截取needle.length()长度的字符串跟needle比较。注意遍历的次数是haystack.length()-needle.length()
 - KMP，计算前缀表，根据前缀表减少回头比较的次数
-[StrStr](src/_28_StrStr.java)
+
 
 ### [125.验证回文串](https://leetcode.cn/problems/valid-palindrome/description/)
-两种解法：
+两种解法：[IsPalindrome](src/_125_IsPalindrome.java)
 - 不使用内置函数，首先去掉字符串中的非字母数字，得到一个新的字符串，再在此字符串上使用双指针判断即可，注意使用while循环更好。只需判断left<right即可
 - 使用内置函数来判断字符是否是数字字母Character.isLetterOrDigit()，并使用Character.toLowerCase()转大小写(如果是非字母返回其本身)，难点在于，要用两个while循环来找到左右两边为字母数字的字符。
-[IsPalindrome](src/_125_IsPalindrome.java)
+
 
 ### [14.最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/description/)
-两种解法，两种角度：
+两种解法，两种角度：[LongestCommonPrefix](src/_14_LongestCommonPrefix.java)
 - 横向来看，最长公共前缀，就是两两比较，不断更新prefix，这样全部比较完后prefix就是最长公共前缀了。即所有字符串的最长公共前缀
 - 纵向来看，最长公共前缀就是逐次比较每个字符串相应位置的字符，直到不相等，则出现最长公共前缀(但要注意判断字符长度)。即横向扫描
-[LongestCommonPrefix](src/_14_LongestCommonPrefix.java)
+
 
 ***[⬆ Back to Index](#index)***
 
@@ -172,20 +171,20 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [83.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/)
 
-链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；两种写法
+链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；两种写法  [DeleteDuplicates](src/_83_DeleteDuplicates.java)
 
 - 递归写法，问题可以分解成多个子问题，递归的思想。终止条件是cur==null或cur.next==null;后面分删除节点和不删除节点，不删除节点就是head.nex=deleteDuplicates(head.next)
   ;删除节点使用while循环
 - 遍历，遍历找到重复节点逐个删除即可，因为需要保留重复节点中的一个，因此不需要pre记录上一个未被删除节点。
-  [DeleteDuplicates](src/_83_DeleteDuplicates.java)
+
 
 ### [82.删除排序链表中的重复元素II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/)
 
-链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；pre记录上一个不重复的节点。两种解法：
+链表的题目。知识点：虚拟头结点(哨兵节点)处理删除头结点的情况；pre记录上一个不重复的节点。两种解法：  [DeleteDuplicates](src/_82_DeleteDuplicates.java)
 
 - 递归，不太好写。终止条件是cur==null或cur.next==null；后面分两种情况，有重复元素不需要跳过元素，有重复元素需要跳过所有元素(因此是while循环)。
 - 迭代，逐个遍历链表，注意到链表是排序的，因此重复元素都是相邻的。找到全部重复元素(值等于cur.val的节点)逐个跳过即可，用一个pre记录上一个不重复的元素。
-  [DeleteDuplicates](src/_82_DeleteDuplicates.java)
+
 
 ### [2.两数相加](https://leetcode.cn/problems/add-two-numbers/)
 
@@ -202,7 +201,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [142.环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
 
-与[141.环形链表](#141环形链表)相似，也是两种解法：
+与[141.环形链表](#141环形链表)相似，也是两种解法：[DetectCycle](src/_142_DetectCycle.java)
 
 - 哈希表，用一个哈希表记录一下，重复的节点就是环的入口点。哈希表中第一个相同的节点，就是环的入口节点。
 - 快慢指针法，但是要用到一个推理，当判断有环后，slow回到原点，同时与fast前进一步终会相遇，且相遇点就是环的入口点。
@@ -210,28 +209,28 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ### [19.删除链表的倒数第N个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/)
 
 这个题的关键在于怎样定位到待删除节点，或者说得到链表的长度(然后遍历即可找到待删除节点),小细节就是注意头结点的删除，因此要用到虚拟头节点。
-三种解法：
+三种解法：  [RemoveNthFromEnd](src/_19_RemoveNthFromEnd.java)
 
 - 双指针定位待删除节点
 - 链表长度，定位到长度，就可以定位到待删除节点了。
 - 栈，倒数的方式，最适合栈这种先进后出的数据结构了，第N个弹栈的就是待删除节点，N+1个弹栈的就是其前驱结点。
-  [RemoveNthFromEnd](src/_19_RemoveNthFromEnd.java)
+
 
 
 ### [160.相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/)
-四种解法：
+四种解法：[GetIntersectionNode](src/_160_GetIntersectionNode.java)
 - 哈希表的解法，遍历其中一个链表添加节点到set中，遍历另一个链表，如果set中存在则直接返回即可(第一个就是相交节点)
 - 双指针，借助推理，比较复杂，短链表的到末尾后移动到长链表的头部 长的到末尾后移动到短的头部，然后再相遇就是交叉节点，基本逻辑跟对齐的解法差不多，但是这里不用知道链表的长度，可见[相交链表官方题解](https://leetcode.cn/problems/intersection-of-two-linked-lists/solutions/811625/xiang-jiao-lian-biao-by-leetcode-solutio-a8jn/)
 - 栈的解法，使用两个栈保存节点值，因为相交是从后往前比较的，如果不相交则栈顶节点不相等，栈顶节点相等说明相交，依次弹栈，找出第一个不相等节点的前一个节点即是相交节点。
 - 计算二者长度后对齐，计算两链表长度后，相减得到差值，移动较长的链表，对齐后，遍历找第一个相等的节点即是相交节点。
-[GetIntersectionNode](src/_160_GetIntersectionNode.java)
+
 
 
 ### [21.合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/)
-两种解法：
+两种解法：[MergeTwoLists](src/_21_MergeTwoLists.java)
 - 迭代：很自然的想法，注意在最后别忘了判断l1的长度不等于l2长度的情况(需要拼接最后一段未进行比较的链表)
 - 递归：结束条件的返回值，l1==null，返回l2，反之也是；较小节点的next指向合并后的其余节点(即递归调用)
-[MergeTwoLists](src/_21_MergeTwoLists.java)
+
 
 ***[⬆ Back to Index](#index)***
 
@@ -265,7 +264,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 [CanConstruct](src/_383_CanConstruct.java)
 
 ### [202.快乐数](https://leetcode.cn/problems/happy-number/description/)🔞
-也是一个数学题，难在分析，三种情况，n==1是快乐数，进入了循环，无限增长(通过分析发现不会发生)
+也是一个数学题，难在分析，三种情况，n==1是快乐数，进入了循环，无限增长(通过分析发现不会发生)[IsHappy](src/_202_IsHappy.java)
 - hash表检测循环，n==1或set中包含了之前出现过的数，说明达到了条件，退出while循环，并在最后判断一下n是否等于1即可
 - **双指针检测循环**，其实就是[链表是否有环](#141环形链表)的解法，快慢指针法，一个前进两步，一个前进一步，那么如果有环，他俩必定相遇。
 得到数字各个位上的数字:先取余得到各位上的数字，再整除得到十位上的数字。不断循环就可以得到该数各个位置上的数字了。
@@ -275,7 +274,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
     n = n / 10;
 }
  ```
-[IsHappy](src/_202_IsHappy.java)
+
 
 ***[⬆ Back to Index](#index)***
 
@@ -317,12 +316,12 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ### [144.二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/description/)
 
 二叉树的前序遍历，实际解题用得不多(后序遍历最多，因为其需要先处理完所有左右子树)。
-两种写法：
+两种写法：[PreorderTraversal](src/_144_PreorderTraversal.java)
 
 - 递归的深度优先搜索
 - 迭代的深度优先搜索
 
-层序遍历迭代使用队列。深度遍历使用栈。[PreorderTraversal](src/_144_PreorderTraversal.java)
+层序遍历迭代使用队列。深度遍历使用栈。
 
 ### [94.二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/)
 
@@ -352,38 +351,38 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 
 ### [101.对称二叉树](https://leetcode.cn/problems/symmetric-tree/description/)
 
-两种写法：
+两种写法：  [IsSymmetric](src/_101_IsSymmetric.java)
 
 - 递归，注意比较的条件left.left和right.right比，left.right和right.left比，和其他不相称的条件判断。
 - 迭代，两种实现**栈和队列**(栈和队列在这里都一样，因为只要保证相邻节点是要比较的节点即可，无关节点进出顺序)，不太好写，主要是比较是成对比较的，因此队列/栈中添加元素也是成对添加的，不太好想到。
-  [IsSymmetric](src/_101_IsSymmetric.java)
+
 
 ### [226.翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/description/)
-两种写法：
+两种写法：[InvertTree](src/_226_InvertTree.java)
 - 递归，主要在于确定结束条件和递归条件。本题都比较好写
 - 迭代，无论是使用队列还是栈都可以，因为只需要能够遍历到每个节点并再下次循环中取出即可。推荐使用队列
-[InvertTree](src/_226_InvertTree.java)
+
 
 ### [105.从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
 难在分析，而不是递归，递归的写法很自然，但是如何递归难写，需要分析前序中序遍历的特点，并且只能树的节点值互不相同才可以。
 难点在于分析出前序遍历确定根节点，根据根节点在中序遍历中的位置从中序遍历中分割出左右子树，再递归(即重复这个过程即可)。
-两种写法：
+两种写法：[BuildTree](src/_105_BuildTree.java)
 - 借助Arrays.copyOfRange()来分割左右子树，因为需要复制数组，效率不太高
 - 借助数组的索引下标来界定范围，优点是不用复制数组了，缺点是难写(**代码还未解决**)。
-[BuildTree](src/_105_BuildTree.java)
+
 
 ### [230.二叉搜索树中第K小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/)
-两种解法：
+两种解法：[KthSmallest](src/_230_KthSmallest.java)
 - 暴力，直接中序遍历得到二叉搜索树的全部节点值(中序遍历二叉搜索树返回的是升序排列的数组)，再找到第k小的即可。
 - 利用性质，第k个最小值 即第k个中序遍历过程中被弹栈的值，中序遍历过程中判断弹了K次栈即可找到第k个最小值。代码中多了健壮性判断，找不到返回Integer.MIN_VALUE，实际上题目的意思是一定能找到。
-[KthSmallest](src/_230_KthSmallest.java)
+
 
 ### [106.从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/)
 **后序遍历就是倒着的前序遍历**，因此本题与105题的解法是一样的。注意使用递归的方式，迭代的方式太麻烦了。
 [BuildTree](src/_106_BuildTree.java)
 
 ### [112.路径总和](https://leetcode.cn/problems/path-sum/description/)
-两种解法：
+两种解法：[HasPathSum](src/_112_HasPathSum.java)
 - 递归，这题递归反而更简单了。递归过程中找到根节点判断一下即可，反之则继续寻找。这里的递归隐含着回溯，**归的过程就是回溯的过程**。
 - 迭代，使用队列保存节点及其节点对应的路径和，一旦该节点是叶子结点并且保存的对应的路径和是targetNum则返回true。注意，可以使用两个队列，一个队列用于层序遍历，另一个队列保存对应节点的路径和;或者直接使用一个队列，队列中的元素是一个Object\[\]数组，直接保存这两个值。
 
@@ -404,33 +403,30 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 节点7的路径和是1+3+7=11
 */
 ```
-[HasPathSum](src/_112_HasPathSum.java)
 
 ### [199.二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/description/)
-两种解法：层序遍历最直接。递归的方法，需要额外的变量来记录递归的层数，每一层最先到达的节点就是最右节点(**注意是先右后左的顺序递归的**)。每一次递归代表来到了新的层，有多少层就是多少栈深，**递归的深度反映了在二叉树深度优先遍历中的层次**。
+两种解法[RightSideView](src/_199_RightSideView.java)：层序遍历最直接。递归的方法，需要额外的变量来记录递归的层数，每一层最先到达的节点就是最右节点(**注意是先右后左的顺序递归的**)。每一次递归代表来到了新的层，有多少层就是多少栈深，**递归的深度反映了在二叉树深度优先遍历中的层次**。
 - 层序遍历(广度优先搜索)，迭代，从题目中可知右视图就是树的每一层的最右边的节点值，那么在层序遍历时，最后一次的节点就是右边的节点(先左后右进队列的情况，反之是左视图)。
 - 深度遍历(深度优先搜索)，递归，在递归时，只需要判断每一层(也即每一个深度)最先到达的节点就是右视图(因为按照先右后左递归的，那么在每一层递归时，第一个到达的节点就是每一层的最右节点)
-[RightSideView](src/_199_RightSideView.java)
 
 ### [637.二叉树的层平均值](https://leetcode.cn/problems/average-of-levels-in-binary-tree/description/)
 
-[AverageOfLevels](src/_637_AverageOfLevels.java)
-计算每一层的和再去求平均，难点在于怎么区分哪些节点是同一层:两种解法
+计算每一层的和再去求平均，难点在于怎么区分哪些节点是同一层，两种解法：[AverageOfLevels](src/_637_AverageOfLevels.java)
 - 层序遍历，最直接的方法
 - 深度遍历，需要两个数组，一个数组计算每一层的和，另一个数组计算每一层的节点数，最后再计算平均值。区分每一层节点的方法：sums保存的是每一层的和，位置就是层级，当level<sums.size()时，说明当前层级在sums中已经保存了，只需要加上当前节点值即可，反之就未保存是一个新的层级，需要新添加进sums和nodes中
 
 ### [114.二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/)🔞
-两种解法：递归，迭代
+两种解法：递归，迭代。[Flatten](src/_114_Flatten.java)
 - 迭代，先把右子树平移到左边，在整体平移左子树到右边。或者先把左子树平移到右边，再将保存的右子树连接到左子树的最右节点。
 - 递归，采用后序遍历的方式，因为前序遍历的话，右子树就丢了，采用后序遍历，确保遍历到当前节点时其右子树已经处理过了。用pre记录上一个处理过的节点，并将当前遍历到的节点指向pre。
-[Flatten](src/_114_Flatten.java)
+
 
 ***[⬆ Back to Index](#index)***
 
 ---
 
 ### [347.前K个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/description/)
-使用最小堆来找前K个最大元素,反之使用最大堆找前K个最小元素.本题是找高频元素，因此需要先使用一个map统计各元素出现的次数。
+使用最小堆来找前K个最大元素,反之使用最大堆找前K个最小元素.本题是找高频元素，因此需要先使用一个map统计各元素出现的次数。[TopKFrequent](src/_347_TopKFrequent.java)
 Java中没有专门堆的实现，**优先级队列就相当于堆**，在创建优先级队列时，通过传入一个比较函数(lambda表达式, Comparator, Comparable接口)，可以实现堆元素的比较。
 
 Comparator, Comparable接口的区别:
@@ -453,8 +449,6 @@ minHeap.forEach(e-> res[index[0]++] = e.getKey());
 AtomicInteger index = new AtomicInteger(0);
 minHeap.forEach(e -> res[index.getAndIncrement()] = e.getKey());
 ```
-
-[TopKFrequent](src/_347_TopKFrequent.java)
 
 ***[⬆ Back to Index](#index)***
 
@@ -502,7 +496,7 @@ digits的长度即是目标字符串长度，str的长度才是每次回溯选�
 
 ### [78.子集](https://leetcode.cn/problems/subsets/description/)
 
-组合的问题。求子集三种解法：前两种解法区别只是path添加进结果集的时机不同，一个后添加，一个先添加。
+组合的问题。求子集三种解法：前两种解法区别只是path添加进结果集的时机不同，一个后添加，一个先添加。[Subsets](src/_78_Subsets.java)
 
 - 回溯，先递归到最深度，在回溯过程中添加值；后添加
 - 回溯，可以先添加元素到结果集中，直至遍历完整个树；先添加
@@ -510,7 +504,6 @@ digits的长度即是目标字符串长度，str的长度才是每次回溯选�
 
 **难点**在于递归的终止条件和结果集的添加很难对应，之前的对应关系是path.size==length即可，难判断path添加进结果集的时机。
 组合的问题，取过的元素不能再取，因此需要一个Index来标识，在遍历过程中收集所有节点即是子集，因此不能剪枝(需要完全遍历)。
-[Subsets](src/_78_Subsets.java)
 
 ### [90.子集II](https://leetcode.cn/problems/subsets-ii/description/)
 
@@ -562,7 +555,7 @@ map中的key是值，val是下标，注意数组的下标从0开始。map中保�
 
 ### [136.只出现一次的数字](https://leetcode.cn/problems/single-number/)
 
-利用异或的技巧，注意题目中，其他数均出现两次，找单值。利用异或的推理。
+利用异或的技巧，注意题目中，其他数均出现两次，找单值。利用异或的推理。  [SingleNumber](src/_136_SingleNumber.java)
 
 - 0 ^ 0 = 0;
 - 1 ^ 0 = 1;
@@ -571,7 +564,7 @@ map中的key是值，val是下标，注意数组的下标从0开始。map中保�
 - 0 ^ a = a; 任何数异或0 都等于其本身
 - a ^ a = 0; 自己异或自己等于0
 - 综合上面两个可以推出 a^b^a = b; 即三个数异或其中两个数相等则结果等于另一个数，即单值。
-  [SingleNumber](src/_136_SingleNumber.java)
+
 
 
 
