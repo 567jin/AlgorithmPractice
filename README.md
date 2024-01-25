@@ -76,6 +76,7 @@
   - [112.路径总和](#112路径总和)--递归(隐含回溯), 迭代(所有节点对应的路径和)
   - [199.二叉树的右视图](#199二叉树的右视图)--层序遍历, 递归记录层数
   - [637.二叉树的层平均值](#637二叉树的层平均值)--层序遍历, 深搜也可判断层级🔞
+  - [114.二叉树展开为链表](#114二叉树展开为链表)--迭代, 递归🔞
 
 - [x] 堆
   - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
@@ -418,6 +419,12 @@ depth+1)不断地递归，直到root==null即可找到最大深度。
 - 层序遍历，最直接的方法
 - 深度遍历，需要两个数组，一个数组计算每一层的和，另一个数组计算每一层的节点数，最后再计算平均值。区分每一层节点的方法：sums保存的是每一层的和，位置就是层级，当level<sums.size()时，说明当前层级在sums中已经保存了，只需要加上当前节点值即可，反之就未保存是一个新的层级，需要新添加进sums和nodes中
 
+### [114.二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/)🔞
+两种解法：递归，迭代
+- 迭代，先把右子树平移到左边，在整体平移左子树到右边。或者先把左子树平移到右边，再将保存的右子树连接到左子树的最右节点。
+- 递归，采用后序遍历的方式，因为前序遍历的话，右子树就丢了，采用后序遍历，确保遍历到当前节点时其右子树已经处理过了。用pre记录上一个处理过的节点，并将当前遍历到的节点指向pre。
+[Flatten](src/_114_Flatten.java)
+
 ***[⬆ Back to Index](#index)***
 
 ---
@@ -433,7 +440,7 @@ Comparator, Comparable接口的区别:
 在堆中元素转数组中，可以直接遍历的方式，也可以选择forEach函数配合Lambda表达式实现元素的转换。
 
 但要注意：
-> 在 Java 中，Lambda 表达式中引用的外部局部变量必须是 final 或 effectively final（一旦赋值后不再修改）。  
+> 在 Java 中，Lambda 表达式中引用的外部局部变量必须是 final 或 effectively final（一旦赋值后不再修改）。
 直接使用基本数据类型的 int 变量在 Lambda 表达式中是不允许的，因为该变量无法被修改，而 Lambda 表达式可能会尝试修改该变量的值，这违反了 effectively final 的规则
 
 因此使用一个数组来包装一下Index(引用类型是可变的符合Lambda要求)，或者使用原子类AtomicInteger
@@ -448,9 +455,6 @@ minHeap.forEach(e -> res[index.getAndIncrement()] = e.getKey());
 ```
 
 [TopKFrequent](src/_347_TopKFrequent.java)
-
-
-
 
 ***[⬆ Back to Index](#index)***
 
