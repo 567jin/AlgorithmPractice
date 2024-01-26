@@ -28,6 +28,7 @@
   - [15.三数之和](#15三数之和)--三指针, 去重技巧🔞
   - [283.移动零](#283移动零)--双指针(真移动，假移动)
   - [238.除自身以外数组的乘积](#238除自身以外数组的乘积)--左乘右乘=总乘
+  - [80.删除有序数组中的重复项II](#80删除有序数组中的重复项ii)--
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -125,6 +126,13 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ### [238.除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/description/)
 比较巧的方法，先计算所有点左边相乘的结果，再计算所有点右边相乘的结果，左边乘右边就是去掉自身后数组剩余所有元素相乘的结果。
 [ProductExceptSelf](src/_238_ProductExceptSelf.java)
+
+
+### [80.删除有序数组中的重复项II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/description/)
+两种解法，第一种是快慢指针，但是比较难想到，第二种是利用计数标记的方式。[RemoveDuplicates](src/_80_RemoveDuplicates.java)
+- 快慢指针，与删除重复项的题类似，但是这里由于要保留两个重复项，因此比较方式变成了快指针与慢指针的前两个进行比较
+- 计数标记，相等时的标记为true，并往后移动，在下次判断时只有相等并且允许重复复标记为true才保留，不相等时标记为false，
+
 
 ***[⬆ Back to Index](#index)***
 
