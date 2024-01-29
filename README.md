@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 51</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 55</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -64,7 +64,7 @@
 - [x] 队列
   - [239.滑动窗口最大值](#239滑动窗口最大值)--单调队列
   - [209.长度最小的子数组](#209长度最小的子数组)--队列, 双指针确定窗口
-  - [3.无重复字符的最长子串](#3无重复字符的最长子串)--
+  - [3.无重复字符的最长子串](#3无重复字符的最长子串)--滑动窗口大小确定🔞
 
 - [x] 树
   - [144.二叉树的前序遍历](#144二叉树的前序遍历)
@@ -325,8 +325,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 注意，题目要求的是**大于等于，而不是等于**。
 [MinSubArrayLen](src/_209_MinSubArrayLen.java)
 
-### [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
-[LengthOfLongestSubstring](src/_3_LengthOfLongestSubstring.java)
+### [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)🔞
+使用双指针确定滑动窗口的大小，但是这里为了确定窗口内的字符是无重复的，还需要一个HashSet来记录窗口内无重复子串[LengthOfLongestSubstring](src/_3_LengthOfLongestSubstring.java)
+遍历过程中有两种情况，当前字符不在窗口内，则直接添加并更新窗口长度；第二种情况，当前字符在窗口内，则需要确定窗口内那个重复字符的位置并更新left的位置到重复字符的位置上。
+
 
 ***[⬆ Back to Index](#index)***
 
