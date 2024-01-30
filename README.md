@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 55</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 56</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -30,6 +30,7 @@
   - [238.除自身以外数组的乘积](#238除自身以外数组的乘积)--左乘右乘=总乘
   - [80.删除有序数组中的重复项II](#80删除有序数组中的重复项ii)--快慢指针
   - [121.买卖股票的最佳时机](#121买卖股票的最佳时机)--历史最小值
+  - [35.搜索插入位置](#35搜索插入位置)--二分查找
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -139,6 +140,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 暴力法和技巧[MaxProfit](src/_121_MaxProfit.java)
 - 暴力法，两层for循环，找到每个点与后面点之间的差的最大值，但是会超时
 - 技巧，找一个变量记录**历史最小值**，每当当前值小于历史最小值就去更新历史最小值，反之就计算最大利润。
+
+### [35.搜索插入位置](https://leetcode.cn/problems/search-insert-position/description/)
+简单的二分查找题，只要看到题目有要求时间复杂度**O(logn)**或者是**排序好的数组**，那么就要考虑二分查找。[SearchInsert](src/_35_SearchInsert.java)
+
 
 ***[⬆ Back to Index](#index)***
 
