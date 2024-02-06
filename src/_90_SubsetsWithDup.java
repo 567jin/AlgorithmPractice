@@ -26,14 +26,16 @@ public class _90_SubsetsWithDup {
     }
 
     private void backTracking(int[] nums, int index) {
-        res.add(new ArrayList<>(path));//「遍历这个树的时候，把所有节点都记录下来，就是要求的子集集合」。
-        if (index >= nums.length) { //终止条件可不加
+        res.add(new ArrayList<>(path));  // 遍历这个树的时候，把所有节点都记录下来，就是要求的子集集合。
+        if (index >= nums.length) {  // 终止条件可不加
             return;
         }
+
         for (int i = index; i < nums.length; i++) {
             if (i > index && nums[i] == nums[i - 1]) {
                 continue;
             }
+            
             path.add(nums[i]);
             backTracking(nums, i + 1);
             path.removeLast();
