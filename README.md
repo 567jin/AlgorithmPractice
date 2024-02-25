@@ -87,6 +87,7 @@
   - [637.二叉树的层平均值](#637二叉树的层平均值)--层序遍历, 深搜也可判断层级🔞
   - [114.二叉树展开为链表](#114二叉树展开为链表)--迭代, 递归🔞
   - [100.相同的树](#100相同的树)--遍历, 异或技巧
+  - [129.求根节点到叶节点数字之和](#129求根节点到叶节点数字之和)--遍历,
 
 - [x] 堆
   - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
@@ -162,7 +163,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 双指针，双指针简单直接，因为数组是排好序的，相加太大则右指针左移，相加太小则左指针右移，直到找到符合条件的数。
 
 ### [228.汇总区间](https://leetcode.cn/problems/summary-ranges/description/)
-**分组循环**，即简单来说外面一个for循环(或者while)内部使用while循环找到符合条件的终止位置，两层循环，对每一个数都用while循环找符合条件的终止点[SummaryRanges](src/_228_SummaryRanges.java)
+**分组循环**，即简单来说外面一个for循环(或者while)内部使用while循环找到符合条件的终止位置，两层循环，对每一个数都用while循环找符合条件的终止点 [SummaryRanges](src/_228_SummaryRanges.java)
 
 ***[⬆ Back to Index](#index)***
 
@@ -481,6 +482,11 @@ if (right1 == null ^ right2 == null) {
 }
 当同时为null或同时不为null时才需要后续判断。当只有一方为null时，直接返回false;
 ```
+
+### [129.求根节点到叶节点数字之和](https://leetcode.cn/problems/sum-root-to-leaf-numbers/description/)
+两种遍历方式：[SumNumbers](src/_129_SumNumbers.java)
+- 深度优先搜索, 记录路径和，直到找到根节点到叶子结点的路径和，则加到最终结果中。
+- 广度优先搜索, 需要两个队列，一个用来维护节点，一个用来维护节点对应的路径和。
 
 
 ***[⬆ Back to Index](#index)***
