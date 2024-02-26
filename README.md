@@ -34,6 +34,7 @@
   - [13.罗马数字转整数](#13罗马数字转整数)--哈希, 理解题目
   - [167.两数之和II-输入有序数组](#167两数之和ii-输入有序数组)--二分查找, 双指针
   - [228.汇总区间](#228汇总区间)--分组循环
+  - [54.螺旋矩阵](#54螺旋矩阵)--模拟
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -164,6 +165,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [228.汇总区间](https://leetcode.cn/problems/summary-ranges/description/)
 **分组循环**，即简单来说外面一个for循环(或者while)内部使用while循环找到符合条件的终止位置，两层循环，对每一个数都用while循环找符合条件的终止点 [SummaryRanges](src/_228_SummaryRanges.java)
+
+### [54.螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/)
+一圈一圈的打印，难点在于边界条件的判定[SpiralOrder](src/_54_SpiralOrder.java)
+
 
 ***[⬆ Back to Index](#index)***
 
