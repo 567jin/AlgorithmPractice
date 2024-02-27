@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 56</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 64</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -54,6 +54,7 @@
   - [19.删除链表的倒数第N个结点](#19删除链表的倒数第n个结点)--三种解法(双指针, 计算长度, 栈)
   - [160.相交链表](#160相交链表)--四种解法, 双指针、栈、哈希表、对齐(计算长度)
   - [21.合并两个有序链表](#21合并两个有序链表)--递归🔞, 迭代🥰
+  - [61.旋转链表](#61旋转链表)--断链接链
 
 
 - [x] 哈希表
@@ -279,6 +280,8 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 迭代：很自然的想法，注意在最后别忘了判断l1的长度不等于l2长度的情况(需要拼接最后一段未进行比较的链表)
 - 递归：结束条件的返回值，l1==null，返回l2，反之也是；较小节点的next指向合并后的其余节点(即递归调用)
 
+### [61.旋转链表](https://leetcode.cn/problems/rotate-list/description/)
+找到轮转规律(k为0或n(链表长度)的倍数时，是原链表，移动的步数以求余计算)，断开链表，再拼接即可[RotateRight](src/_61_RotateRight.java)
 
 ***[⬆ Back to Index](#index)***
 
