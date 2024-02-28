@@ -104,8 +104,9 @@
   - [51.N皇后](#51n皇后)🔞
 
 - [x] 动态规划
-  - [509.斐波那契数](#509斐波那契数)--递归, 动规
-  - [62.不同路径](#62不同路径)--动规
+  - [509.斐波那契数](#509斐波那契数)--递归, 动规, 迭代
+  - [62.不同路径](#62不同路径)--动规(其实就是推导出一个类似于斐波那契的结果,然后迭代求解)
+  - [64.最小路径和](#64最小路径和)--Min的递推公式
 
 
 - [x] 数据结构的设计
@@ -168,7 +169,8 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 双指针，双指针简单直接，因为数组是排好序的，相加太大则右指针左移，相加太小则左指针右移，直到找到符合条件的数。
 
 ### [228.汇总区间](https://leetcode.cn/problems/summary-ranges/description/)
-**分组循环**，即简单来说外面一个for循环(或者while)内部使用while循环找到符合条件的终止位置，两层循环，对每一个数都用while循环找符合条件的终止点 [SummaryRanges](src/_228_SummaryRanges.java)
+**分组循环**，即简单来说外面一个for循环(或者while)内部使用while循环找到符合条件的终止位置，两层循环，对每一个数都用while循环找符合条件的终止点
+
 
 ### [54.螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/)
 一圈一圈的打印，难点在于边界条件的判定[SpiralOrder](src/_54_SpiralOrder.java)
@@ -207,7 +209,8 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 纵向来看，最长公共前缀就是逐次比较每个字符串相应位置的字符，直到不相等，则出现最长公共前缀(但要注意判断字符长度)。即横向扫描
 
 ### [1446.连续字符](https://leetcode.cn/problems/consecutive-characters/description/)
-与[228.汇总区间](#228汇总区间)类似，使用分组循环。即外面是一个while循环，里面用while循环找符合条件的值[MaxPower](src/_1446_MaxPower.java)
+与[228.汇总区间](#228汇总区间)类似，使用分组循环。即外面是一个while循环，里面用while循环找符合条件的值
+
 
 
 ***[⬆ Back to Index](#index)***
@@ -621,8 +624,16 @@ dp的解题步骤，首先就是分析出问题递归公式，本题的公式是
 ```text
 f[i][j] = f[i - 1][j] + f[i][j - 1] f[0][j]=1 f[i][0]=1
 ```
-然后需要一个二维数组来保存中间值按照公式编写代码即可。
-[UniquePaths](src/_62_UniquePaths.java)
+然后需要一个二维数组来保存中间值按照公式编写代码即可。[UniquePaths](src/_62_UniquePaths.java)
+
+### [64.最小路径和](https://leetcode.cn/problems/minimum-path-sum/description/)
+动态规划的方法(自己解出来了)就是先推导递推公式，再找初始条件即可。本题的递推公式是
+```text
+dp[m][n] = Math.min(grid[m][n] + dp[m - 1][n], grid[m][n] + dp[m][n - 1]);  
+初始条件是 第一行和第一列 都是直接相加的结果
+然后递推找到最后一个最小值即可
+```
+[MinPathSum](src/_64_MinPathSum.java)
 
 
 ***[⬆ Back to Index](#index)***
