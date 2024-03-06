@@ -1,9 +1,6 @@
 package utils;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author jzy
@@ -48,12 +45,12 @@ public class TreeNode {
             TreeNode cur = queue.poll();
 
             if (nodes[i] != null) {
-                cur.left = new TreeNode(nodes[i]);
+                Objects.requireNonNull(cur).left = new TreeNode(nodes[i]);
                 queue.offer(cur.left);
             }
 
             if (i + 1 < nodes.length && nodes[i + 1] != null) {
-                cur.right = new TreeNode(nodes[i + 1]);
+                Objects.requireNonNull(cur).right = new TreeNode(nodes[i + 1]);
                 queue.offer(cur.right);
             }
         }
@@ -75,7 +72,7 @@ public class TreeNode {
             int size = queue.size();
             while (size-- > 0) {
                 TreeNode cur = queue.poll();
-                res.add(cur.val);
+                res.add(Objects.requireNonNull(cur).val);
                 if (cur.left != null) {
                     queue.offer(cur.left);
                 }
