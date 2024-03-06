@@ -35,6 +35,7 @@
   - [167.两数之和II-输入有序数组](#167两数之和ii-输入有序数组)--二分查找, 双指针
   - [228.汇总区间](#228汇总区间)--分组循环
   - [54.螺旋矩阵](#54螺旋矩阵)--模拟
+  - [189.轮转数组](#189轮转数组)--
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -176,6 +177,12 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 ### [54.螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/)
 一圈一圈的打印，难点在于边界条件的判定[SpiralOrder](src/_54_SpiralOrder.java)
 
+
+### [189.轮转数组](https://leetcode.cn/problems/rotate-array/description/)
+观察规律，两种方法，第一种使用一个额外的数组来保存轮转后的数组；第二种直接反转数组，经过三次反转后可以达到轮转的效果[Rotate](src/_189_Rotate.java)
+- 额外数组保存元素,使用一个额外的数组保存轮转后的元素，位置是(i + k) % length
+- 三次反转=轮转，观察规律。第一次整体反转，第二次反转前(0, k % nums.length - 1)个元素，第三次反转(k % nums.length, nums.length - 1)之间的元素
+- 直接轮转，比较复杂。数学推导。[环状替换](https://leetcode.cn/problems/rotate-array/solutions/551039/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/?envType=study-plan-v2&envId=top-interview-150)
 
 ***[⬆ Back to Index](#index)***
 
