@@ -36,6 +36,7 @@
   - [228.汇总区间](#228汇总区间)--分组循环
   - [54.螺旋矩阵](#54螺旋矩阵)--模拟
   - [189.轮转数组](#189轮转数组)--三次反转=轮转
+  - [122.买卖股票的最佳时机ii](#122买卖股票的最佳时机ii)--贪心, 动规
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -184,6 +185,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 额外数组保存元素,使用一个额外的数组保存轮转后的元素，位置是(i + k) % length
 - 三次反转=轮转，观察规律。第一次整体反转，第二次反转前(0, k % nums.length - 1)个元素，第三次反转(k % nums.length, nums.length - 1)之间的元素
 - 直接轮转，比较复杂。数学推导。[环状替换](https://leetcode.cn/problems/rotate-array/solutions/551039/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/?envType=study-plan-v2&envId=top-interview-150)
+
+### [122.买卖股票的最佳时机ii](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
+贪心和动态规划。贪心的思想比较简单，局部最优可以推出全局最优，关键在于把问题分解成求多个局部最优；动态规划难点在于递推公式和保存状态的矩阵的定义。[MaxProfit](src/_122_MaxProfit.java)
+
 
 ***[⬆ Back to Index](#index)***
 
