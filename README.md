@@ -37,6 +37,7 @@
   - [54.螺旋矩阵](#54螺旋矩阵)--模拟
   - [189.轮转数组](#189轮转数组)--三次反转=轮转
   - [122.买卖股票的最佳时机ii](#122买卖股票的最佳时机ii)--贪心, 动规
+  - [73.矩阵置零](#73矩阵置零)--标记
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -189,6 +190,10 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [122.买卖股票的最佳时机ii](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
 贪心和动态规划。贪心的思想比较简单，局部最优可以推出全局最优，关键在于把问题分解成求多个局部最优；动态规划难点在于递推公式和保存状态的矩阵的定义。[MaxProfit](src/_122_MaxProfit.java)
+
+### [73.矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/description/)
+使用两个标记数组标记哪一行哪一列需要置零。然后遍历该数组，判断是否满足标记的条件，置零即可。[_73_SetZeroes.java](src/_73_SetZeroes.java)
+
 
 
 ***[⬆ Back to Index](#index)***
