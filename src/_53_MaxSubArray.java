@@ -40,10 +40,10 @@ public class _53_MaxSubArray {
         if (n == 1) {
             return nums[0];
         }
-        int maxSum = 0;
-        int pre = nums[0];
-        for (int i = 1; i < n; i++) {
-            pre = Math.max(pre + nums[i], nums[i]);
+        int maxSum = nums[0];
+        int pre = 0;
+        for (int num : nums) {
+            pre = Math.max(pre + num, num);
             maxSum = Math.max(maxSum, pre);
         }
         return maxSum;
