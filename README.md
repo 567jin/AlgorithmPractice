@@ -41,6 +41,7 @@
   - [53.最大子数组和](#53最大子数组和)--动规
   - [55.跳跃游戏](#55跳跃游戏)--贪心
   - [11.盛最多水的容器](#11盛最多水的容器)--双指针, 贪心
+  - [48.旋转图像](#48旋转图像)--
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -212,8 +213,11 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 双指针加贪心的思想。双指针解题，贪心的思想证明这样做的正确性。
 [_11_MaxArea.java](src/_11_MaxArea.java)
 
+### [48.旋转图像](https://leetcode.cn/problems/rotate-image/description/)
+[Rotate](src/_48_Rotate.java)
 
 ***[⬆ Back to Index](#index)***
+
 
 ---
 <!--字符串-->
