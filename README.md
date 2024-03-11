@@ -41,7 +41,8 @@
   - [53.最大子数组和](#53最大子数组和)--动规
   - [55.跳跃游戏](#55跳跃游戏)--贪心
   - [11.盛最多水的容器](#11盛最多水的容器)--双指针, 贪心
-  - [48.旋转图像](#48旋转图像)--
+  - [48.旋转图像](#48旋转图像)--矩阵操作
+  - [56.合并区间](#56合并区间)--区间
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -217,6 +218,21 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ### [48.旋转图像](https://leetcode.cn/problems/rotate-image/description/)
 [Rotate](src/_48_Rotate.java)
+
+
+###  [56.合并区间](https://leetcode.cn/problems/merge-intervals/description/)
+先对区间进行排序，然后判断后面的区间的起始值是否在前一个区间内部即可。难点在于对二维数组的排序，和最后答案的返回(res.toArray(new int\[\]\[\]{}))。
+[Merge](src/_56_Merge.java)
+```java
+//        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));  // 这种排序方法很慢
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] - o2[0];
+            }
+        });
+```
+
 
 ***[⬆ Back to Index](#index)***
 
