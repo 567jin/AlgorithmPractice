@@ -402,7 +402,7 @@ for (char ch : s.toCharArray()) {
 
 
 ### [219.存在重复元素ii](https://leetcode.cn/problems/contains-duplicate-ii/description/)
-两种解法。[ContainsNearbyDuplicate](_219_ContainsNearbyDuplicate.java)
+两种解法。[ContainsNearbyDuplicate](src/_219_ContainsNearbyDuplicate.java)
 - 首先是hashMap的解法，其key对应值，value是nums的索引。一旦map.containsKey(nums\[i\])则计算其差值是否满足k即可。
 - 第二种滑动窗口加hashSet的解法。因为是需要找k个以内的子数组有没有重复值，因此可以使用一个set集合，维护set集合内的元素最多为k个。
 
