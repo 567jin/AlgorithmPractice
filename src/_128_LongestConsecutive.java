@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,33 @@ public class _128_LongestConsecutive {
         System.out.println(i);
         int i2 = new _128_LongestConsecutive().longestConsecutive2(nums);
         System.out.println(i2);
+        int i3 = new _128_LongestConsecutive().longestConsecutive3(nums);
+        System.out.println(i3);
     }
 
+    public int longestConsecutive3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int maxLen = Integer.MIN_VALUE;
+        int n = nums.length;
+        int len = 1;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] == nums[i - 1] + 1) {
+                len++;
+            } else if (nums[i] == nums[i - 1]) {  // 等于时 直接跳过 不计数 但也不从头计数
+            } else {
+                maxLen = Math.max(maxLen, len);
+                len = 1;
+            }
+        }
+        return Math.max(maxLen, len);
+    }
+
+    /**
+     * 优化一下解法1的while哈希查找过程
+     */
     public int longestConsecutive2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
