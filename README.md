@@ -72,7 +72,8 @@
   - [383.赎金信](#383赎金信)--字符统计
   - [202.快乐数](#202快乐数)--哈希表, 快慢指针, 数学分析🔞
   - [205.同构字符串](#205同构字符串)--映射
-  - [219.存在重复元素ii](#219存在重复元素ii)-- 滑动窗口+set
+  - [219.存在重复元素ii](#219存在重复元素ii)--滑动窗口+set
+  - [128.最长连续序列](#128最长连续序列)--
 
 - [x] 栈
   - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
@@ -405,6 +406,12 @@ for (char ch : s.toCharArray()) {
 两种解法。[ContainsNearbyDuplicate](src/_219_ContainsNearbyDuplicate.java)
 - 首先是hashMap的解法，其key对应值，value是nums的索引。一旦map.containsKey(nums\[i\])则计算其差值是否满足k即可。
 - 第二种滑动窗口加hashSet的解法。因为是需要找k个以内的子数组有没有重复值，因此可以使用一个set集合，维护set集合内的元素最多为k个。
+
+### [128.最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/description/)
+直接使用哈希表存储所有的值。然后用while循环遍历找以每个num为起始点的最长连续序列(但是会超时)，因此可以优化一下，  
+对于\[100,4,200,1,2,3\]来说可以发现在找的过程中如果2开始则没必要，因为存在1开始的更长的子序列，  
+从3开始也没必要，因为存在从2开始的最长子序列，因此只有当前值的前一个值不存在与set集合中时，遍历才有意义。[LongestConsecutive](src/_128_LongestConsecutive.java)
+
 
 
 ***[⬆ Back to Index](#index)***
