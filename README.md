@@ -65,6 +65,7 @@
   - [160.相交链表](#160相交链表)--四种解法, 双指针、栈、哈希表、对齐(计算长度)
   - [21.合并两个有序链表](#21合并两个有序链表)--递归🔞, 迭代🥰
   - [61.旋转链表](#61旋转链表)--断链接链
+  - [92.反转链表ii](#92反转链表ii)--
 
 
 - [x] 哈希表
@@ -369,6 +370,13 @@ for (char ch : s.toCharArray()) {
 
 ### [61.旋转链表](https://leetcode.cn/problems/rotate-list/description/)
 找到轮转规律(k为0或n(链表长度)的倍数时，是原链表，移动的步数以求余计算)，断开链表，再拼接即可[RotateRight](src/_61_RotateRight.java)
+
+
+### [92.反转链表ii](https://leetcode.cn/problems/reverse-linked-list-ii/description/)
+三种解法：先断链再接链；在遍历过程中反转，头插法。[ReverseBetween](src/_92_ReverseBetween.java)
+- 断链接链。即找到要反转的子链，断开后进行反转，再接链，缺点是可能会遍历两次链表。
+- 在遍历过程中直接反转。首先找到pre即待反转子链的前一个链表节点，然后对后面的链表进行反转。再拼接链表(因为反转过程中子链的第一个链表指向null，即断开了链表，因此在最后还需要拼接上去)
+- 头插法。pre指向待反转链表的前一个节点，cur永远指向当前待翻转链表的第一个节点，要做的是把cur.next插入pre的后面。
 
 ***[⬆ Back to Index](#index)***
 
