@@ -79,6 +79,7 @@
 - [x] 栈
   - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
   - [150.逆波兰表达式求值](#150逆波兰表达式求值)--栈的经典应用
+  - [155.最小栈](#155最小栈)--双栈模拟, 定义新类保存值, 保存差值
 
 - [x] 队列
   - [239.滑动窗口最大值](#239滑动窗口最大值)--单调队列
@@ -222,7 +223,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 
 ###  [56.合并区间](https://leetcode.cn/problems/merge-intervals/description/)
 先对区间进行排序，然后判断后面的区间的起始值是否在前一个区间内部即可。难点在于对二维数组的排序，和最后答案的返回(res.toArray(new int\[\]\[\]{}))。
-[Merge](src/_56_Merge.java)
+还有一个小知识点，这里用LinkedList比用ArrayList要好，因为过程中只需要获取最后一个元素。[Merge](src/_56_Merge.java)
 ```java
 //        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));  // 这种排序方法很慢
         Arrays.sort(intervals, new Comparator<int[]>() {
@@ -443,6 +444,13 @@ for (char ch : s.toCharArray()) {
 ### [150.逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/description/)
 一道栈的经典应用的题目，逆波兰表达式利用了栈的先入先出的特点，简化了数学表达式的计算(仅仅利用一个栈这种计算机中很常见的数据结构)。
 [EvalRPN](src/_150_EvalRPN.java)
+
+### [155.最小栈](https://leetcode.cn/problems/min-stack/)
+三种解法：双栈模拟，定义一个新类保存val和minVal，栈中记录和最小值的差值和不断更新最小值 [MinStack](src/_155_MinStack.java)
+- 双栈模拟，即额外定义一个栈来保存最小值，每次压val入栈时，同时压一个当前最小值入另一个栈。
+- 定义一个类入Pair，保存val和minVal，跟双栈模拟一个意思。
+- 记录差值。即栈中记录当前val与minVal的差值，当差值小于0时说明要更新最小值了，在弹栈时，同样需要更新最小值(差值为零更新最小值即最小值要变大)，peek的值永远是当前最小值加差值。
+
 
 ***[⬆ Back to Index](#index)***
 
