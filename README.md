@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 64</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 82</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -65,7 +65,7 @@
   - [160.相交链表](#160相交链表)--四种解法, 双指针、栈、哈希表、对齐(计算长度)
   - [21.合并两个有序链表](#21合并两个有序链表)--递归🔞, 迭代🥰
   - [61.旋转链表](#61旋转链表)--断链接链
-  - [92.反转链表ii](#92反转链表ii)--
+  - [92.反转链表ii](#92反转链表ii)--头插, 断链接链
 
 
 - [x] 哈希表
@@ -75,7 +75,7 @@
   - [202.快乐数](#202快乐数)--哈希表, 快慢指针, 数学分析🔞
   - [205.同构字符串](#205同构字符串)--映射
   - [219.存在重复元素ii](#219存在重复元素ii)--滑动窗口+set
-  - [128.最长连续序列](#128最长连续序列)--
+  - [128.最长连续序列](#128最长连续序列)--哈希但要优化查找过程
 
 - [x] 栈
   - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
