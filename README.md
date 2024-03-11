@@ -71,7 +71,8 @@
   - [49.字母异位词分组](#49字母异位词分组)--哈希map, key的选择
   - [383.赎金信](#383赎金信)--字符统计
   - [202.快乐数](#202快乐数)--哈希表, 快慢指针, 数学分析🔞
-  - [205.同构字符串](#205同构字符串)--
+  - [205.同构字符串](#205同构字符串)--映射
+  - [219.存在重复元素ii](#219存在重复元素ii)-- 滑动窗口+set
 
 - [x] 栈
   - [20.有效的括号](#20有效的括号)--栈的经典应用, 括号匹配
@@ -398,6 +399,13 @@ for (char ch : s.toCharArray()) {
 [IsIsomorphic](src/_205_IsIsomorphic.java)
 - 直接相互映射，定义两个map，s2t，t2s，在遍历字符串过程中比较映射是否能对应起来。
 - 映射为第三方，即s映射为其他数组，t映射为其他数组，比较这两个字符串映射后的第三方数组是否相等。
+
+
+### [219.存在重复元素ii](https://leetcode.cn/problems/contains-duplicate-ii/description/)
+两种解法。[ContainsNearbyDuplicate](_219_ContainsNearbyDuplicate.java)
+- 首先是hashMap的解法，其key对应值，value是nums的索引。一旦map.containsKey(nums\[i\])则计算其差值是否满足k即可。
+- 第二种滑动窗口加hashSet的解法。因为是需要找k个以内的子数组有没有重复值，因此可以使用一个set集合，维护set集合内的元素最多为k个。
+
 
 ***[⬆ Back to Index](#index)***
 
