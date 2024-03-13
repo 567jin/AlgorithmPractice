@@ -124,6 +124,8 @@
   - [62.不同路径](#62不同路径)--动规(其实就是推导出一个类似于斐波那契的结果,然后迭代求解)
   - [64.最小路径和](#64最小路径和)--Min的递推公式
   - [70.爬楼梯](#70爬楼梯)--找递推公式, 递归降维
+  - [5.最长回文子串](#5最长回文子串)--多维递归,
+  - [1143.最长公共子序列](#1143最长公共子序列)--多维递归,
 
 
 - [x] 数据结构的设计
@@ -761,6 +763,13 @@ dp[m][n] = Math.min(grid[m][n] + dp[m - 1][n], grid[m][n] + dp[m][n - 1]);
 ### [70.爬楼梯](https://leetcode.cn/problems/climbing-stairs/description/)
 难在找递推公式，需要仔细推导，每次只能上1或2阶台阶，因此当前台阶只与前一个或前两个台阶有关，
 得出递推公式为dp\[i\]=dp\[i-1\]+dp\[i-2\]确定边界条件dp\[0\]=1,dp\[1\]=1，再自己递推一下确定是否正确就可以写代码了。[ClimbStairs](src/_70_ClimbStairs.java)
+
+### [5.最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/description/)
+[LongestPalindrome](src/_5_LongestPalindrome.java)
+
+### [1143.最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/description/)
+注意和最长公共子串相区分。都是一样的解法，二维动态规划
+dp\[i\]\[j\]表示当前字符串text1的第i个位置和字符串text2第j个位置的最长公共子序列，列出一个表格更好理解。[LongestCommonSubsequence](src/_1143_LongestCommonSubsequence.java)
 
 
 ***[⬆ Back to Index](#index)***
