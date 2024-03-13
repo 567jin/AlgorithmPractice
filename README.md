@@ -124,7 +124,7 @@
   - [62.不同路径](#62不同路径)--动规(其实就是推导出一个类似于斐波那契的结果,然后迭代求解)
   - [64.最小路径和](#64最小路径和)--Min的递推公式
   - [70.爬楼梯](#70爬楼梯)--找递推公式, 递归降维
-  - [5.最长回文子串](#5最长回文子串)--多维递归,
+  - [5.最长回文子串](#5最长回文子串)--朴素字符串匹配, 多维递归, 中心扩散
   - [1143.最长公共子序列](#1143最长公共子序列)--多维递归,
 
 
@@ -765,7 +765,13 @@ dp[m][n] = Math.min(grid[m][n] + dp[m - 1][n], grid[m][n] + dp[m][n - 1]);
 得出递推公式为dp\[i\]=dp\[i-1\]+dp\[i-2\]确定边界条件dp\[0\]=1,dp\[1\]=1，再自己递推一下确定是否正确就可以写代码了。[ClimbStairs](src/_70_ClimbStairs.java)
 
 ### [5.最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/description/)
-[LongestPalindrome](src/_5_LongestPalindrome.java)
+非常经典的二维动态规划的题目。三种解法：朴素匹配，动态规划，中心扩散[LongestPalindrome](src/_5_LongestPalindrome.java)
+- 朴素匹配，两层for循环，不断的以i为起始位置，查看后面的字符是否是回文串。
+- 动态规划，由于一个回文串去掉两端字符后仍然是回文串，因此定义dp\[i\]\[j\]=dp\[i + 1\]\[j - 1\] && s.charAt(i) == s.charAt(j),
+即当前区间字符是否是回文串与前一个区间及其两端是否相等有关。又或者区间内只有一个字符即i==j的情况则直接是true，又或者区间内有两个或三个字符的情况则只有当s.charAt(i) == s.charAt(j)才是回文串。
+但是由于计算dp\[i\]\[j\]与dp\[i+1\]\[j-1\]有关 所以外层循环的i要倒着遍历。确保在计算dp\[i\]\[j\]时 dp\[i+1\]\[j-1\]的结果已经计算出来了
+- 中心扩散，即对于区间内一个字符而言或者两个字符而言，向其两端不断地扩展，判断s.charAt(i) == s.charAt(j)就能保证其一直是回文子串。
+
 
 ### [1143.最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/description/)
 注意和最长公共子串相区分。都是一样的解法，二维动态规划
