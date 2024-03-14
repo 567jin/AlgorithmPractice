@@ -43,6 +43,7 @@
   - [11.盛最多水的容器](#11盛最多水的容器)--双指针, 贪心
   - [48.旋转图像](#48旋转图像)--矩阵操作
   - [56.合并区间](#56合并区间)--区间
+  - [45.跳跃游戏ii](#45跳跃游戏ii)--贪心
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -202,7 +203,7 @@ right--)。[ThreeSum](src/_15_ThreeSum.java)
 - 直接轮转，比较复杂。数学推导。[环状替换](https://leetcode.cn/problems/rotate-array/solutions/551039/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/?envType=study-plan-v2&envId=top-interview-150)
 
 ### [122.买卖股票的最佳时机ii](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
-贪心和动态规划。贪心的思想比较简单，局部最优可以推出全局最优，关键在于把问题分解成求多个局部最优；动态规划难点在于递推公式和保存状态的矩阵的定义。[MaxProfit](src/_122_MaxProfit.java)
+贪心和动态规划。贪心的思想比较简单(只考虑当前最佳选项，不考虑以后情况)，局部最优可以推出全局最优，关键在于把问题分解成求多个局部最优；动态规划难点在于递推公式和保存状态的矩阵的定义。[MaxProfit](src/_122_MaxProfit.java)
 
 ### [73.矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/description/)
 使用两个标记数组标记哪一行哪一列需要置零。然后遍历该数组，判断是否满足标记的条件，置零即可。[_73_SetZeroes.java](src/_73_SetZeroes.java)
@@ -238,6 +239,10 @@ Arrays.sort(intervals, new Comparator<int[]>() {
     }
 });
 ```
+
+### [45.跳跃游戏ii](https://leetcode.cn/problems/jump-game-ii/description/)
+最小跳跃次数，那么贪心的做法是，每次都选择跳跃最大位置，那么到达最终位置必定是最少跳跃次数。因此，使用一个变量定义一下右边界(当到达了边界时，进入下一次跳跃)，因为题目说是可达的，因此当边界等于i时不用跳跃(因为此时已经到达了)
+[Jump](src/_45_Jump.java)
 
 
 ***[⬆ Back to Index](#index)***
