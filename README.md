@@ -44,7 +44,7 @@
   - [48.旋转图像](#48旋转图像)--矩阵操作
   - [56.合并区间](#56合并区间)--区间
   - [45.跳跃游戏ii](#45跳跃游戏ii)--贪心
-  - [45.跳跃游戏ii](#45跳跃游戏ii)--贪心
+  - [274.h指数](#274h指数)--理解题目
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -250,7 +250,10 @@ Arrays.sort(intervals, new Comparator<int[]>() {
 
 
 ### [274.h指数](https://leetcode.cn/problems/h-index/description/)
-[]()
+至少有h篇论文引用指数大于h，先对数组排序，倒着找即可。[HIndex](src/_274_HIndex.java)
+
+
+
 
 ***[⬆ Back to Index](#index)***
 
