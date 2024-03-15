@@ -44,6 +44,7 @@
   - [48.旋转图像](#48旋转图像)--矩阵操作
   - [56.合并区间](#56合并区间)--区间
   - [45.跳跃游戏ii](#45跳跃游戏ii)--贪心
+  - [45.跳跃游戏ii](#45跳跃游戏ii)--贪心
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -129,6 +130,7 @@
   - [70.爬楼梯](#70爬楼梯)--找递推公式, 递归降维
   - [5.最长回文子串](#5最长回文子串)--朴素字符串匹配, 多维递归, 中心扩散
   - [1143.最长公共子序列](#1143最长公共子序列)--多维递归,
+  - [198.打家劫舍](#198打家劫舍)--一维动态规划
 
 
 - [x] 数据结构的设计
@@ -246,6 +248,9 @@ Arrays.sort(intervals, new Comparator<int[]>() {
 最小跳跃次数，那么贪心的做法是，每次都选择跳跃最大位置，那么到达最终位置必定是最少跳跃次数。因此，使用一个变量定义一下右边界(当到达了边界时，进入下一次跳跃)，因为题目说是可达的，因此当边界等于i时不用跳跃(因为此时已经到达了)
 [Jump](src/_45_Jump.java)
 
+
+### [274.h指数](https://leetcode.cn/problems/h-index/description/)
+[]()
 
 ***[⬆ Back to Index](#index)***
 
@@ -789,6 +794,11 @@ dp[m][n] = Math.min(grid[m][n] + dp[m - 1][n], grid[m][n] + dp[m][n - 1]);
 ### [1143.最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/description/)
 注意和最长公共子串相区分。都是一样的解法，二维动态规划
 dp\[i\]\[j\]表示当前字符串text1的第i个位置和字符串text2第j个位置的最长公共子序列，列出一个表格更好理解。[LongestCommonSubsequence](src/_1143_LongestCommonSubsequence.java)
+
+
+### [198.打家劫舍](https://leetcode.cn/problems/house-robber/description/)
+一维动态规划的入门题。难点在于递推公式和dp的定义，这里dp定义为偷盗i个房子能获得的最大金额
+[Rob](src/_198_Rob.java)
 
 
 ***[⬆ Back to Index](#index)***
