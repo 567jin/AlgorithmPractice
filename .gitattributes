@@ -1,3 +1,3 @@
-# Markdown
+# Markdown 意思是将md文件也统计进去
 *.md linguist-detectable=true
 *.md linguist-documentation=false

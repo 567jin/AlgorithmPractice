@@ -55,6 +55,7 @@
   - [1446.连续字符](#1446连续字符)--分组循环
   - [6. Z 字形变换](#6z字形变换)--技巧
   - [392.判断子序列](#392判断子序列)--贪心, 双指针, 动规
+  - [76.最小覆盖子串](#76最小覆盖子串)--滑动窗口
 
 - [x] 链表
   - [206.反转链表](#206反转链表)
@@ -311,7 +312,10 @@ for (char ch : s.toCharArray()) {
 动态规划的思想，使用一个二维数组来记录t中每个位置i往后字符j出现的位置，这样的话就可以“跳着”匹配了，即匹配到了之后，下一个字符的位置保存在dp中，  
 直接跳到该位置即可，而不逐一进行遍历比较了；二维数组的定义和理解比较复杂，有点类似于KMP了。[IsSubsequence](src/_392_IsSubsequence.java)
 
-
+### [76.最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/description/)
+滑动窗口，使用两个数组，分别记录窗口内的字符及其个数和t串，只有当s中的字符存在于t对应的hashMap中，
+才更新window，只有window中的字符和map中的字符一样，才开始收缩窗口，即移动左指针，去除window中对应的字符。
+[MinWindow](src/_76_MinWindow.java)
 
 
 ***[⬆ Back to Index](#index)***
