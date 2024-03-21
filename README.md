@@ -807,6 +807,11 @@ dp\[i\]\[j\]表示当前字符串text1的第i个位置和字符串text2第j个�
 一维动态规划的入门题。难点在于递推公式和dp的定义，这里dp定义为偷盗i个房子能获得的最大金额
 [Rob](src/_198_Rob.java)
 
+### [139.单词拆分](https://leetcode.cn/problems/word-break/description/)
+使用动态规划比较好，因为最后的答案跟前面的答案有关系，即问题可以拆成很多小问题，然后定义dp\[i\]的含义表示以i位置结尾的字符串是否存在set中。  
+外层for循环遍历i,内层从i开始遍历，截取i到j之间的字符串，看起是否存在于set中；如果存在则dp\[j\]=true，反之继续寻找。如果所有的i遍历完了，即字符串遍历一遍了，如果最后一个dp为true，则可以满足题意。  
+[WordBreak](src/_139_WordBreak.java)
+
 
 ***[⬆ Back to Index](#index)***
 
