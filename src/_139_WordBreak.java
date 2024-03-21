@@ -31,7 +31,7 @@ public class _139_WordBreak {
             for (int j = i; j <= n; j++) { // 以i为起始点 自增j并截取 ij范围内的字符串 看看是否在set中
                 if (dp[i] && set.contains(s.substring(i, j))) {
                     dp[j] = true;
-                    break;
+//                    break;  // 不能breaks s ="aaaaaaa" wordDict=["aaaa","aaa"] 就过不了 因为当查到3个a时候就break了 这个是以i为起点 与下面以i为终点不同
                 }
             }
         }
