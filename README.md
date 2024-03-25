@@ -125,6 +125,7 @@
   - [78.子集](#78子集)
   - [90.子集II](#90子集ii)
   - [51.N皇后](#51n皇后)🔞
+  - [93.复原IP地址](#93复原ip地址)--ip的特点有四段
 
 - [x] 动态规划
   - [509.斐波那契数](#509斐波那契数)--递归, 动规, 迭代
@@ -769,6 +770,12 @@ if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {  // 找出重复数字
 
 很难，但主要还是用回溯，关键在于判断落棋的条件。棋盘的宽度就是for循环的长度，递归的深度就是棋盘的高度
 [SolveNQueens](src/_51_SolveNQueens.java)
+
+
+### [93.复原ip地址](https://leetcode.cn/problems/restore-ip-addresses/description/)
+ip分为四段，因此终止条件也是四段找完了，并且索引到了字符串的最后一位(题目说必须要用上所有的字符)。
+回溯过程中有个难点就是不能包含前导0，一旦一段有一个0了，则必须去寻找下一段。
+[RestoreIpAddresses](src/_193_RestoreIpAddresses.java)
 
 
 ***[⬆ Back to Index](#index)***
