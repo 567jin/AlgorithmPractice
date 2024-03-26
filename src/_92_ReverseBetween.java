@@ -91,20 +91,22 @@ public class _92_ReverseBetween {
     public ListNode reverseBetween3(ListNode head, int left, int right) {  // 头插法
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        ListNode pre = dummy;
+        ListNode pre = dummy;  // pre始终指向待反转区间第一个节点的上一个节点
         int num = right - left;
         while (left-- > 1) {  // 反转区域的前一个节点
             pre = pre.next;
         }
 
-        ListNode cur = pre.next;
+        ListNode cur = pre.next;  // 始终指向待反转区间的第一个节点
         ListNode curNext;
 
+        // 整个过程可以描述为断开下一个节点 将下一个节点插到当前节点的前面(通过更新pre)
         while (num-- > 0) {  // 头插num次  即把cur的next节点 插到cur的前面
             curNext = cur.next;
-            cur.next = curNext.next;
-            curNext.next = pre.next;
-            pre.next = curNext;
+            cur.next = curNext.next;  // 当前节点指向下一个节点的下一个节点 其实相当于把next节点断开 cur后移 因为后面的节点要插到其前面
+
+            curNext.next = pre.next;  //
+            pre.next = curNext;  // 更新pre的下一个节点 即现在变成了cur节点的下一个节点
         }
 
         return dummy.next;
