@@ -270,7 +270,9 @@ Arrays.sort(intervals, new Comparator<int[]>() {
 并且由于是环形数组，还涉及到环形数组的遍历，即到达末尾了，再回到起点开始遍历(对长度取余)。[CanCompleteCircuit](src/_134_CanCompleteCircuit.java)
 
 ### [287.寻找重复数](https://leetcode.cn/problems/find-the-duplicate-number/description/)
-哈希最简单，但是需要O(N)的空间复杂度[FindDuplicate](src/_287_FindDuplicate.java)
+哈希最简单，但是需要O(N)的空间复杂度；抽屉原理(一个抽屉只能放一个，当超过时必有抽屉放多个)，下标是编号表示有几个抽屉，当数组元素小于当前抽屉号时，说明左边不存在重复数(抽屉足够)，因此往右边找，由于使用到二分时间复杂度为O(nlogn)；
+Floyd 判圈算法，类似于链表找环入口，难点在于怎么从数组建成链表。[FindDuplicate](src/_287_FindDuplicate.java)
+
 
 ***[⬆ Back to Index](#index)***
 
