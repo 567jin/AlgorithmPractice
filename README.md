@@ -72,7 +72,8 @@
   - [21.合并两个有序链表](#21合并两个有序链表)--递归🔞, 迭代🥰
   - [61.旋转链表](#61旋转链表)--断链接链
   - [92.反转链表ii](#92反转链表ii)--头插, 断链接链
-  - [138.随机链表的复制](#138随机链表的复制)--HashMap记录
+  - [138.随机链表的复制](#138随机链表的复制)--HashMap记录关系
+  - [25.K个一组翻转链表](#25k个一组翻转链表)--前驱和后继，接链和断链
 
 
 - [x] 哈希表
@@ -421,8 +422,11 @@ for (char ch : s.toCharArray()) {
 
 
 ### [138.随机链表的复制](https://leetcode.cn/problems/copy-list-with-random-pointer/description/)
-本题难点在于节点中随机指针的复制，采用hashmap的方法，将原先节点与新节点的位置绑定在一起记录在map中，后面再遍历原链表，根据原链表和绑定关系，绑定新链表的next和random的指向。[CopyRandomList](src/_138_CopyRandomList.java)
+本题难点在于节点中随机指针的复制，采用hashmap的方法，将原先节点与新节点的位置绑定在一起记录在map中，后面再遍历原链表，  
+根据原链表和绑定关系，绑定新链表的next和random的指向。[CopyRandomList](src/_138_CopyRandomList.java)
 
+### [25.k个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/)
+找到待翻转区域的前驱和后继节点。[ReverseKGroup](src/_25_ReverseKGroup.java)
 
 
 ***[⬆ Back to Index](#index)***
