@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author jzy
@@ -59,17 +57,17 @@ public class _193_RestoreIpAddresses {
         return res;
     }
 
-    public void dfs(String s, int i, int k) {
+    public void dfs(String s, int index, int k) {
         if (k == 0) {
-            if (i == s.length()) res.add(String.join(".", path));
+            if (index == s.length()) res.add(String.join(".", path));
             return;
         }
-        for (int j = i; j < s.length() && j < i + 3; ++j) {
-            if (s.charAt(i) == '0' && j > i) return;    // 不能是前导0 即最多只有一个0
-            int v = Integer.parseInt(s.substring(i, j + 1));
+        for (int i = index; i < s.length() && i < index + 3; ++i) {
+            if (s.charAt(index) == '0' && i > index) return;    // 不能是前导0 即最多只有一个0
+            int v = Integer.parseInt(s.substring(index, i + 1));
             if (v >= 0 && v <= 255) {
-                path.add(s.substring(i, j + 1));
-                dfs(s, j + 1, k - 1);
+                path.add(s.substring(index, i + 1));
+                dfs(s, i + 1, k - 1);
                 path.removeLast();
             }
         }
