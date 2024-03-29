@@ -794,6 +794,12 @@ ip分为四段，因此终止条件也是四段找完了，并且索引到了字
 [RestoreIpAddresses](src/_193_RestoreIpAddresses.java)
 
 
+### [79.单词搜索](https://leetcode.cn/problems/word-search/description/)
+回溯，难点在怎么找一个点的上下左右，这里用到了一个技巧就是定义一个偏移量，遍历偏移量就可以遍历这个点的四周；  
+两种回溯写法一种是额外数组来标记，即用一个二维布尔数组标记走过的路程，另一种写法是直接在board上进行标记[Exist](src/_79_Exist.java)
+
+
+
 ***[⬆ Back to Index](#index)***
 
 ---
