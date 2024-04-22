@@ -1,5 +1,8 @@
+import javax.sound.sampled.Line;
 import javax.swing.plaf.basic.BasicSplitPaneUI;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author jzy
@@ -73,6 +76,23 @@ public class _130_Solve {
             dfs2(board, i, j);
         }
 
+    }
+
+    private void bfs(char[][] board, int row, int col) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{row, col});
+        while (!queue.isEmpty()) {
+            int[] cur = queue.poll();
+            int i = cur[0], j = cur[1];
+            if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || board[i][j] != 'O') {
+                continue;
+            }
+            board[i][j] = '#';
+            queue.add(new int[]{i + 1, j});
+            queue.add(new int[]{i - 1, j});
+            queue.add(new int[]{i, j + 1});
+            queue.add(new int[]{i, j - 1});
+        }
     }
 
 }
