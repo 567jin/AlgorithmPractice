@@ -50,6 +50,7 @@
   - [287.寻找重复数](#287寻找重复数)--哈希, 抽屉原理, Floyd 判圈
   - [42.接雨水](#42接雨水)--动态规划, 单调栈, 双指针
   - [154.寻找旋转排序数组中的最小值II](#154寻找旋转排序数组中的最小值ii)--二分
+  - [约瑟夫环](#约瑟夫环)
 
 - [x] 字符串
   - [58.最后一个单词的长度](#58最后一个单词的长度)--正则, 倒序遍历
@@ -289,6 +290,9 @@ Floyd 判圈算法，类似于链表找环入口，难点在于怎么从数组�
 
 ### [154.寻找旋转排序数组中的最小值II](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/description/)
 二分，是在二分的基础上改的，可以画出折线图，然后根据折线图的变化，确定二分的走向[FindMin](src/_154_FindMin.java)
+
+### 约瑟夫环
+
 
 
 ***[⬆ Back to Index](#index)***
@@ -690,6 +694,10 @@ if (right1 == null ^ right2 == null) {
 两种解法：递归。中序遍历[IsValidBST](src/_98_IsValidBST.java)
 - 递归：对于一个二叉搜索树而言，其子树也是二叉搜索树，因此可以使用递归去解决。但是边界条件难以判断，边界条件用左右子树不能大于一个边界判断，例左子树最大值不能大于root，最小值不能大于右子树的最小值，因此是两个边界。
 - 中序遍历：判断当前节点值是否大于上一个遍历的值，如果满足则是一个二叉搜索树，反之不是。
+
+
+### [LCR155.将二叉搜索树转化为排序的双向链表](https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/)
+中序遍历，遍历该二叉树，在中序遍历过程中改变left和right指针。[TreeToDoublyList](src/_155LCR_TreeToDoublyList.java)
 
 ***[⬆ Back to Index](#index)***
 
