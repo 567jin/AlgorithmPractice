@@ -1,10 +1,4 @@
-import com.sun.org.apache.xerces.internal.impl.dv.xs.AnySimpleDV;
-import com.sun.org.apache.xpath.internal.functions.FuncFalse;
-import sun.java2d.marlin.DPathConsumer2D;
-import utils.TreeNode;
-
-import javax.swing.plaf.metal.MetalIconFactory;
-import java.util.Arrays;
+import org.junit.Test;
 
 /**
  * @author jzy
@@ -35,7 +29,7 @@ public class _5_LongestPalindrome {
     }
 
     /**
-     * 扩散
+     * 中心扩散法
      */
     public void expandAroundCenter(String s, int left, int right) {
         // 在区间[left,right]不断地像两边移动 直到达到最长回文子串
