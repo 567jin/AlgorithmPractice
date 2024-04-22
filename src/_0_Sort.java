@@ -13,10 +13,50 @@ public class _0_Sort {
 //        System.out.println("冒泡排序：" + Arrays.toString(bubbleSort(arr)));
 //        System.out.println("选则排序：" + Arrays.toString(selectionSort(arr)));
 //        System.out.println("插入排序：" + Arrays.toString(insertionSort(arr)));
-//        System.out.println("归并排序：" + Arrays.toString(mergeSort(arr)));
+        System.out.println("归并排序：" + Arrays.toString(mergeSort(arr)));
+//        System.out.println("归并排序：" + Arrays.toString(mergeSort2(arr)));
 //        quickSort(arr, 0, arr.length - 1);
 //        System.out.println("快速排序：" + Arrays.toString(arr));
-        System.out.println("计数排序: " + Arrays.toString(countingSort(arr)));
+//        System.out.println("计数排序: " + Arrays.toString(countingSort(arr)));
+        System.out.println("堆排序：" + Arrays.toString(HeapSort(arr)));
+    }
+
+    public static int[] HeapSort(int[] arr) {
+        // 建堆
+        int n = arr.length;  // 构建大顶堆 最后一个叶子结点开始 对于一个具有 n 个元素的完全二叉树，它的最后一个非叶子节点的索引是 (n >> 1) - 1
+        for (int i = (n >> 1) - 1; i >= 0; i--) {
+            heapModify(arr, n, i);
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            int temp = arr[i];
+            arr[i] = arr[0];
+            arr[0] = temp;
+            heapModify(arr, i, 0);
+        }
+
+        return arr;
+    }
+
+    // n是树的上界  i表示当前最大值
+    private static void heapModify(int[] arr, int n, int i) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+        // 放置largest
+        if (largest != i) {
+            int temp = arr[largest];
+            arr[largest] = arr[i];
+            arr[i] = temp;
+            // 一直调整堆 直到 largest 放置到正确的位置
+            heapModify(arr, n, largest);
+        }
+
     }
 
     /**
@@ -85,6 +125,56 @@ public class _0_Sort {
         }
         return arr;
     }
+
+
+    public static int[] mergeSort2(int[] arr) {
+        if (arr.length <= 1) {
+            return arr;
+        }
+        int[] aux = new int[arr.length]; // 辅助数组 防止频繁创建数组
+        mergeSort(arr, 0, arr.length - 1, aux);
+        return arr;
+    }
+
+    private static void mergeSort(int[] arr, int low, int high, int[] aux) {
+        if (low >= high) {
+            return;
+        }
+        int middle = (low + high) / 2;
+        mergeSort(arr, low, middle, aux); // 左半部分归并排序
+        mergeSort(arr, middle + 1, high, aux); // 右半部分归并排序
+        merge(arr, low, middle, high, aux); // 归并两个有序数组
+    }
+
+    private static void merge(int[] arr, int low, int middle, int high, int[] aux) {
+        // 将arr[low...middle]和arr[middle+1...high]两部分归并到aux数组中
+        for (int i = low; i <= high; i++) {
+            aux[i] = arr[i];
+        }
+
+        int i = low; // 左半部分起始索引
+        int j = middle + 1; // 右半部分起始索引
+        int k = low; // 归并后数组的起始索引
+
+        // 归并排序
+        while (i <= middle && j <= high) {
+            if (aux[i] <= aux[j]) {
+                arr[k++] = aux[i++];
+            } else {
+                arr[k++] = aux[j++];
+            }
+        }
+
+        // 处理剩余的元素
+        while (i <= middle) {
+            arr[k++] = aux[i++];
+        }
+
+        while (j <= high) {
+            arr[k++] = aux[j++];
+        }
+    }
+
 
     /**
      * 归并排序
