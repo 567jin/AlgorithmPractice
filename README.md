@@ -1,7 +1,7 @@
 <p align="center">
     <img src=https://s2.loli.net/2024/01/17/aP5tGLcBYpSlDKN.png />
 </p>
-<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 82</h1>
+<h1 align="center" style="font-size: 36px; text-align: center; color: #8f4794">题目数量: 109</h1>
 <div align="center">
 <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img alt="" src="https://img.shields.io/badge/JDK-1.8-green.svg"/>
@@ -118,6 +118,7 @@
   - [236.二叉树的最近公共祖先](#236二叉树的最近公共祖先)--迭代, 递归🔞
   - [173.二叉搜索树迭代器](#173二叉搜索树迭代器)--中序遍历
   - [98.验证二叉搜索树](#98验证二叉搜索树)--中序遍历, 递归
+  - [LCR155.将二叉搜索树转化为排序的双向链表](#lcr155将二叉搜索树转化为排序的双向链表)--中序遍历
 
 - [x] 堆
   - [347.前K个高频元素](#347前k个高频元素)--大顶堆，小顶堆的选择。
