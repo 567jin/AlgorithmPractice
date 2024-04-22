@@ -77,6 +77,7 @@
   - [92.反转链表ii](#92反转链表ii)--头插, 断链接链
   - [138.随机链表的复制](#138随机链表的复制)--HashMap记录关系
   - [25.K个一组翻转链表](#25k个一组翻转链表)--前驱和后继，接链和断链
+  - [86.分隔链表](#86分隔链表)--大小两段链表、防止成环
 
 
 - [x] 哈希表
@@ -450,6 +451,10 @@ for (char ch : s.toCharArray()) {
 ### [25.k个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/)
 找到待翻转区域的前驱和后继节点。[ReverseKGroup](src/_25_ReverseKGroup.java)
 
+
+### [86.分隔链表](https://leetcode.cn/problems/partition-list/description/)
+先分割成小头节点(小于x的)，大头节点(大于x的)，最后在拼接这两部分链表。
+[Partition](src/_86_Partition.java)
 
 ***[⬆ Back to Index](#index)***
 
