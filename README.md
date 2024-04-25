@@ -154,6 +154,7 @@
 - [x] 其它
   - [136.只出现一次的数字](#136只出现一次的数字)--异或
   - [172.阶乘后的零](#172阶乘后的零)--问题转化
+  - [50.Pow(x,n)](#50powx-n)--快速幂
 
 ## 每日一题 🤢🤮🤬😡🥵🥰
 
@@ -929,6 +930,8 @@ map中的key是值，val是下标，注意数组的下标从0开始。map中保�
 所以问题转化为找n的质因数为5的个数。
 [TrailingZeroes](src/_172_TrailingZeroes.java)
 
+### [50.Pow(x, n)](https://leetcode.cn/problems/powx-n/description/)
+[MyPow](src/_50_MyPow.java)
 
 ***[⬆ Back to Index](#index)***
 
